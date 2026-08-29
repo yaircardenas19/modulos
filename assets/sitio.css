@@ -1,0 +1,227 @@
+/* ─────────────────────────────────────────────────────────
+   Micrositio del Módulo de Razonamiento Cuantitativo
+   Diseñado para leerse en un celular, de pie, con mala señal.
+   ───────────────────────────────────────────────────────── */
+:root{
+  --papel:#FCFBF8; --papel-2:#F4F2EC; --papel-3:#EAE7DE;
+  --tinta:#182437; --tinta-2:#4A5568; --tinta-3:#7C8798;
+  --linea:#D9D5CA; --linea-fina:#E7E3DA;
+  --azul:#1B3A63; --maiz:#B67818; --verde:#2C6B51; --morado:#5F4489;
+  --rojo:#A63A2A; --naranja:#B85B1E; --turquesa:#186F76;
+  --ok:#2C6B51; --mal:#A63A2A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papel:#12161D; --papel-2:#1A1F28; --papel-3:#232935;
+    --tinta:#E8E5DD; --tinta-2:#A9B0BD; --tinta-3:#79818F;
+    --linea:#2F3641; --linea-fina:#242A34;
+    --azul:#7FA8DC; --maiz:#E0A83F; --verde:#5FBF95; --morado:#A78BD8;
+    --rojo:#E1806D; --naranja:#E0904E; --turquesa:#4FBAC2;
+    --ok:#5FBF95; --mal:#E1806D;
+  }
+}
+:root[data-theme="dark"]{
+  --papel:#12161D; --papel-2:#1A1F28; --papel-3:#232935;
+  --tinta:#E8E5DD; --tinta-2:#A9B0BD; --tinta-3:#79818F;
+  --linea:#2F3641; --linea-fina:#242A34;
+  --azul:#7FA8DC; --maiz:#E0A83F; --verde:#5FBF95; --morado:#A78BD8;
+  --rojo:#E1806D; --naranja:#E0904E; --turquesa:#4FBAC2;
+  --ok:#5FBF95; --mal:#E1806D;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--papel); color:var(--tinta);
+  font-family:"Source Sans 3",-apple-system,"Segoe UI",system-ui,sans-serif;
+  font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+.serif,h1,h2,h3{font-family:"Newsreader",Georgia,"Times New Roman",serif}
+.mono{font-family:"IBM Plex Mono",ui-monospace,"Courier New",monospace; font-variant-numeric:tabular-nums}
+.mat{font-family:"Newsreader",Georgia,serif; font-style:italic; font-size:1.06em}
+
+/* ── Estructura ── */
+.env{max-width:680px; margin:0 auto; padding:0 20px 80px}
+.migas{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.11em;
+  text-transform:uppercase; color:var(--tinta-3); padding:18px 0 0;
+  display:flex; gap:8px; flex-wrap:wrap; align-items:center;
+}
+.migas a{color:var(--tinta-3); text-decoration:none; border-bottom:1px solid var(--linea)}
+.migas a:hover{color:var(--tinta)}
+.migas span{opacity:.5}
+
+header.cab{padding:22px 0 26px; border-bottom:2px solid var(--tinta); margin-bottom:26px}
+.tipo{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--acento,var(--azul)); margin:0 0 8px;
+  display:flex; align-items:center; gap:8px;
+}
+h1{font-size:clamp(1.75rem,6.5vw,2.5rem); line-height:1.08; margin:0 0 10px; font-weight:600;
+   letter-spacing:-.015em; text-wrap:balance}
+.bajada{margin:0; color:var(--tinta-2); font-size:1.02rem}
+
+h2{font-size:1.35rem; font-weight:600; margin:2em 0 .6em; letter-spacing:-.008em}
+h3{font-size:1.12rem; font-weight:600; margin:1.7em 0 .5em}
+p{margin:0 0 1em}
+.fino{font-size:.9rem; color:var(--tinta-3)}
+
+/* ── Listas de navegación (índices) ── */
+.lista{list-style:none; margin:1.2em 0; padding:0; display:grid; gap:10px}
+.lista a{
+  display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:0 14px; align-items:center;
+  border:1px solid var(--linea); border-radius:6px; padding:15px 17px;
+  text-decoration:none; color:inherit; background:var(--papel);
+  min-height:60px;
+}
+.lista a:hover,.lista a:focus-visible{border-color:var(--acento,var(--azul)); background:var(--papel-2)}
+.lista a:focus-visible{outline:2px solid var(--maiz); outline-offset:2px}
+.lista .num{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; letter-spacing:.08em;
+  color:var(--acento,var(--azul)); border:1px solid currentColor; border-radius:4px;
+  padding:3px 7px; white-space:nowrap;
+}
+.lista .txt{min-width:0}
+.lista .txt b{display:block; font-weight:600; font-size:1rem; line-height:1.28}
+.lista .txt small{display:block; color:var(--tinta-3); font-size:.82rem; margin-top:2px}
+.lista .fl{color:var(--tinta-3); font-size:1.1rem}
+
+/* ── Botones ── */
+.bt{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  border:1px solid var(--azul); background:var(--azul); color:var(--papel);
+  border-radius:6px; padding:13px 22px; font-size:16px; font-weight:600;
+  cursor:pointer; text-decoration:none; font-family:inherit; min-height:48px;
+}
+.bt:hover{opacity:.9}
+.bt.sec{background:transparent; color:var(--azul)}
+.bt:focus-visible{outline:2px solid var(--maiz); outline-offset:2px}
+.bt:disabled{opacity:.45; cursor:not-allowed}
+.acciones{display:flex; gap:10px; flex-wrap:wrap; margin:1.4em 0}
+
+/* ── Cajas ── */
+.caja{
+  border:1px solid var(--linea); border-left:3px solid var(--acento,var(--azul));
+  background:var(--papel-2); padding:16px 18px; margin:1.3em 0; border-radius:0 5px 5px 0;
+}
+.caja > :first-child{margin-top:0} .caja > :last-child{margin-bottom:0}
+.caja-tit{
+  font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:600; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--acento,var(--azul)); margin:0 0 7px;
+}
+
+/* ── Diagnóstico / quiz ── */
+.item{border-top:1px solid var(--linea-fina); padding:20px 0}
+.item:first-of-type{border-top:1.5px solid var(--linea)}
+.item-n{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; letter-spacing:.1em;
+  color:var(--tinta-3); margin:0 0 6px;
+}
+.item-p{margin:0 0 14px; font-size:1.05rem}
+.ops{display:grid; gap:8px}
+.op{
+  display:grid; grid-template-columns:26px minmax(0,1fr); gap:12px; align-items:center;
+  border:1px solid var(--linea); border-radius:6px; padding:13px 15px; cursor:pointer;
+  background:var(--papel); min-height:52px; font-size:16px;
+}
+.op:hover{border-color:var(--tinta-3)}
+.op input{position:absolute; opacity:0; pointer-events:none}
+.op .let{
+  font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:600; color:var(--tinta-3);
+  border:1px solid var(--linea); border-radius:50%; width:26px; height:26px;
+  display:grid; place-items:center;
+}
+.op:has(input:checked){border-color:var(--azul); background:var(--papel-2)}
+.op:has(input:checked) .let{border-color:var(--azul); color:var(--azul)}
+.op:has(input:focus-visible){outline:2px solid var(--maiz); outline-offset:2px}
+.op.ok{border-color:var(--ok); background:color-mix(in srgb, var(--ok) 8%, transparent)}
+.op.ok .let{border-color:var(--ok); color:var(--ok)}
+.op.mal{border-color:var(--mal)}
+.op.mal .let{border-color:var(--mal); color:var(--mal)}
+
+.num-in{
+  font-family:"IBM Plex Mono",monospace; font-size:17px; text-align:right;
+  background:var(--papel-2); color:var(--tinta); border:1px solid var(--linea);
+  border-radius:6px; padding:12px 14px; width:100%; max-width:220px; min-height:48px;
+}
+.num-in:focus-visible{outline:2px solid var(--maiz); outline-offset:1px}
+.num-in.ok{border-color:var(--ok)} .num-in.mal{border-color:var(--mal)}
+.unidad{font-size:.9rem; color:var(--tinta-3); margin-left:8px}
+
+.fb{margin:12px 0 0; font-size:.94rem; padding:11px 14px; border-radius:5px; line-height:1.5}
+.fb.ok{background:color-mix(in srgb, var(--ok) 10%, transparent); color:var(--tinta)}
+.fb.mal{background:color-mix(in srgb, var(--mal) 10%, transparent); color:var(--tinta)}
+.fb b{display:block; margin-bottom:3px}
+
+.marcador{
+  position:sticky; bottom:0; background:var(--papel); border-top:2px solid var(--tinta);
+  padding:14px 0; margin-top:26px; display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+}
+.marcador .res{font-family:"Newsreader",serif; font-size:1.3rem; font-weight:600}
+.marcador .res small{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--tinta-3);
+                     letter-spacing:.1em; text-transform:uppercase; display:block}
+
+/* ── Banco de ejercicios ── */
+.ej{border-top:1px solid var(--linea-fina); padding:18px 0}
+.ej:first-of-type{border-top:1.5px solid var(--linea)}
+.ej-cab{display:flex; gap:10px; align-items:baseline; margin-bottom:8px; flex-wrap:wrap}
+.ej-n{font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; color:var(--naranja)}
+.ej-niv{
+  font-family:"IBM Plex Mono",monospace; font-size:9.5px; font-weight:600; letter-spacing:.11em;
+  text-transform:uppercase; color:var(--tinta-3); border:1px solid var(--linea);
+  border-radius:3px; padding:2px 7px;
+}
+.ej p{margin:0 0 10px}
+details.sol{margin-top:8px}
+details.sol summary{
+  cursor:pointer; font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600;
+  letter-spacing:.11em; text-transform:uppercase; color:var(--tinta-3); list-style:none;
+  padding:8px 0; min-height:32px; display:flex; align-items:center;
+}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ "; color:var(--maiz); margin-right:5px}
+details.sol[open] summary::before{content:"▾ "}
+details.sol summary:focus-visible{outline:2px solid var(--maiz); outline-offset:2px}
+details.sol .cont{
+  font-size:.96rem; color:var(--tinta-2); border-left:2px solid var(--linea);
+  padding:2px 0 2px 14px; margin-bottom:6px;
+}
+details.sol .cont b{color:var(--tinta)}
+
+/* ── Redirector ── */
+.cargando{
+  min-height:70vh; display:grid; place-items:center; text-align:center; padding:20px;
+}
+.cargando .p{max-width:34ch}
+.spin{
+  width:26px; height:26px; border:2px solid var(--linea); border-top-color:var(--azul);
+  border-radius:50%; margin:0 auto 18px; animation:g 900ms linear infinite;
+}
+@keyframes g{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){ .spin{animation:none} *{transition:none !important} }
+
+/* ── Estado ── */
+.vacio{
+  border:1px dashed var(--linea); border-radius:6px; padding:26px 20px; text-align:center;
+  color:var(--tinta-3); font-size:.96rem;
+}
+footer.pie{
+  margin-top:50px; padding-top:20px; border-top:1px solid var(--linea);
+  font-size:.84rem; color:var(--tinta-3); display:flex; flex-wrap:wrap; gap:6px 20px;
+  justify-content:space-between;
+}
+footer.pie a{color:var(--tinta-3)}
+.sello{
+  font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.11em;
+  text-transform:uppercase; color:var(--tinta-3);
+}
+
+@media (min-width:640px){
+  body{font-size:17.5px}
+  .env{padding:0 24px 90px}
+}
+@media print{
+  .acciones,.marcador,.migas{display:none}
+  body{background:#fff; color:#111; font-size:11pt}
+  details.sol{display:none}
+}

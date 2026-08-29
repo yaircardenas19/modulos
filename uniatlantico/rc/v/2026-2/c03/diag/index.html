@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 3</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><b>Inicio</b><span>›</span><a href="../../../../../../uniatlantico/rc/">Razonamiento Cuantitativo</a><span>›</span><a href="../../../../../../uniatlantico/rc/c03/">Cap. 3</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Cuando una cosa depende de otra</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Respóndelo <b>antes</b> de tu clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Razonamiento Cuantitativo · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"mc","p":"¿Cuál de estas fracciones es equivalente a <b>3/4</b>?","ops":["6/9","9/12","7/8","4/5"],"correcta":1,"fb":{"0":"6/9 se simplifica a 2/3.","1":"Bien: 9/12 dividido por 3 arriba y abajo da 3/4.","2":"7/8 es mayor que 3/4.","3":"4/5 = 0,8 y 3/4 = 0,75."}},{"tipo":"num","p":"Un kilo de arroz cuesta <b>$4.200</b>. ¿Cuánto cuestan <b>3 kilos</b>?","resp":12600,"respTexto":"$12.600","unidad":"pesos","fbOk":"Directa: el precio por kilo no cambia.","fbMal":" 4.200 × 3 = 12.600. Es proporcionalidad directa."},{"tipo":"num","p":"Si 2 arepas llevan <b>100 g</b> de masa y 4 arepas llevan <b>200 g</b>, ¿cuánta masa llevan <b>6 arepas</b>?","resp":300,"unidad":"gramos","fbOk":"El cociente masa ÷ arepas se mantiene en 50.","fbMal":" Cada arepa lleva 50 g, así que 6 llevan 300 g. El cociente masa ÷ arepas no cambia."},{"tipo":"mc","p":"«Si aumenta el número de trabajadores en una obra, el tiempo para terminarla también aumenta.» Esta afirmación es:","ops":["Verdadera","Falsa","Verdadera solo si trabajan al mismo ritmo","Depende del tamaño de la obra"],"correcta":1,"fb":{"0":"Prueba el caso extremo: ¿mil trabajadores tardarían más? La relación es inversa.","1":"Bien: más trabajadores, menos tiempo. Es proporcionalidad inversa.","2":"Aun trabajando al mismo ritmo, el tiempo baja.","3":"El tamaño de la obra cambia el número, no el sentido de la relación."}},{"tipo":"num","p":"El <b>25 %</b> de 80 es:","resp":20,"fbOk":"La cuarta parte de 80.","fbMal":" 80 × 0,25 = 20. El 25 % es la cuarta parte."}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

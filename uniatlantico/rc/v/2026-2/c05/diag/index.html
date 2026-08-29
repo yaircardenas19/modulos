@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 5</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><b>Inicio</b><span>›</span><a href="../../../../../../uniatlantico/rc/">Razonamiento Cuantitativo</a><span>›</span><a href="../../../../../../uniatlantico/rc/c05/">Cap. 5</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>El dinero en el tiempo</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Respóndelo <b>antes</b> de tu clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Razonamiento Cuantitativo · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"El <b>5 %</b> de $600.000 es:","resp":30000,"respTexto":"$30.000","unidad":"pesos","fbOk":"Correcto.","fbMal":" 600.000 × 0,05 = 30.000."},{"tipo":"num","p":"Escribe <b>2,5 %</b> como número decimal.","resp":0.025,"respTexto":"0,025","fbOk":"Dividir entre 100.","fbMal":" 2,5 ÷ 100 = 0,025. Este es el error de coma que más puntos cuesta en el capítulo."},{"tipo":"num","p":"Calcula <b>1,05³</b> con cuatro decimales.","resp":1.1576,"respTexto":"1,1576","tol":0.0002,"fbOk":"Esa es la tecla que vas a usar todo el capítulo.","fbMal":" 1,05 × 1,05 × 1,05 = 1,157625, que redondeado a cuatro decimales es 1,1576."},{"tipo":"mc","p":"Si algo aumenta <b>10 %</b> y luego otro <b>10 %</b>, ¿aumentó en total 20 %?","ops":["Sí, 10 + 10 = 20","No: aumentó 21 %","No: aumentó 19 %","Sí, si la base no cambia"],"correcta":1,"fb":{"0":"Los factores se multiplican: 1,10 × 1,10 = 1,21.","1":"Bien: 1,10 × 1,10 = 1,21, o sea 21 %.","2":"El segundo aumento se calcula sobre una base mayor, así que da más de 20 %, no menos.","3":"La base sí cambia: ese es justamente el punto."}},{"tipo":"num","p":"¿Cuántos <b>meses</b> hay en 2 años y medio?","resp":30,"unidad":"meses","fbOk":"Correcto. La tasa y el tiempo deben ir en la misma unidad.","fbMal":" 2,5 × 12 = 30 meses. Más de la mitad de los errores del capítulo son de unidades de tiempo."}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

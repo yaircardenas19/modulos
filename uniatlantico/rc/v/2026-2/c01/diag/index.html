@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 1</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><b>Inicio</b><span>›</span><a href="../../../../../../uniatlantico/rc/">Razonamiento Cuantitativo</a><span>›</span><a href="../../../../../../uniatlantico/rc/c01/">Cap. 1</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Los números que usamos todos los días</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Respóndelo <b>antes</b> de tu clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Razonamiento Cuantitativo · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"mc","p":"¿Cuál de estos números es el <b>mayor</b>?","ops":["0,45","0,5","0,405","0,4999"],"correcta":1,"fb":{"0":"Iguala la cantidad de cifras con ceros: 0,45 frente a 0,50. Ahora se ve.","1":"Bien: 0,5 es 0,50, mayor que todos los demás.","2":"0,405 es incluso menor que 0,45.","3":"0,4999 se acerca mucho, pero sigue siendo menor que 0,5."}},{"tipo":"num","p":"Escribe <b>1/4</b> como número decimal.","resp":0.25,"respTexto":"0,25","fbOk":"La raya de fracción es una división: 1 ÷ 4.","fbMal":" 1 ÷ 4 = 0,25, que es lo mismo que 25 %."},{"tipo":"mc","p":"De los números <b>−3, 2, −7 y 0</b>, ¿cuál es el <b>menor</b>?","ops":["−3","2","−7","0"],"correcta":2,"fb":{"0":"En la recta, −7 queda más a la izquierda que −3.","1":"El 2 es el mayor de los cuatro, no el menor.","2":"Bien: mientras mayor el número sin signo, más a la izquierda queda.","3":"El cero es mayor que cualquier negativo."}},{"tipo":"mc","p":"¿Cuántos números existen entre <b>0,3</b> y <b>0,4</b>?","ops":["Ninguno","Nueve","Noventa y nueve","Infinitos"],"correcta":3,"fb":{"0":"Sí hay: 0,35 está entre los dos. Y entre 0,3 y 0,35 hay otro más.","1":"Hay más de nueve. Promedia dos cualesquiera y siempre obtienes uno nuevo.","2":"Hay más de noventa y nueve. El truco de promediar no se acaba nunca.","3":"Bien: eso se llama densidad, y es la razón por la que la recta no tiene huecos."}},{"tipo":"mc","p":"En Colombia <b>$1.500</b> se lee «mil quinientos pesos». En notación decimal, ¿cuánto vale <b>1,500</b>?","ops":["Mil quinientos","Uno con cinco décimas","Quince","Ciento cincuenta"],"correcta":1,"fb":{"0":"Ese es el uso del punto como separador de miles, no de la coma decimal.","1":"Bien: la coma separa la parte decimal, así que 1,500 = 1,5.","2":"No: la coma no corre la cifra dos lugares.","3":"No: eso sería 150."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

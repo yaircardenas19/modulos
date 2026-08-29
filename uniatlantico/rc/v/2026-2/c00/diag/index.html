@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 0</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><b>Inicio</b><span>›</span><a href="../../../../../../uniatlantico/rc/">Razonamiento Cuantitativo</a><span>›</span><a href="../../../../../../uniatlantico/rc/c00/">Cap. 0</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Cómo se piensa un problema</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Respóndelo <b>antes</b> de tu clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Razonamiento Cuantitativo · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"Continúa la secuencia: <b>2, 5, 11, 23, …</b> ¿Cuál es el siguiente término?","resp":47,"fbOk":"Cada término es el doble del anterior más 1.","fbMal":" Cada término es el doble del anterior más 1: 23 × 2 + 1."},{"tipo":"num","p":"Pensé un número, le sumé <b>7</b> y multipliqué por <b>3</b>. Me dio <b>36</b>. ¿Qué número pensé?","resp":5,"fbOk":"Fuiste hacia atrás: deshiciste las operaciones en orden inverso.","fbMal":" Ve hacia atrás: 36 ÷ 3 = 12, y 12 − 7 = 5."},{"tipo":"num","p":"Un caracol sube <b>3 m</b> de día y resbala <b>2 m</b> de noche por un muro de <b>10 m</b>. ¿En qué día llega arriba?","resp":8,"unidad":"día","fbOk":"Muy bien: el último día llega antes de resbalar.","fbMal":" Avanza 1 m neto por día, pero el día 8 alcanza los 10 m durante el día, antes de resbalar. Si respondiste 10, olvidaste la última jornada."},{"tipo":"num","p":"En una reunión de <b>5 personas</b> cada una saluda a todas las demás una sola vez. ¿Cuántos saludos hay?","resp":10,"fbOk":"Simplificaste el caso: 5 × 4 ÷ 2.","fbMal":" Empieza por casos pequeños: con 3 personas hay 3 saludos, con 4 hay 6. La regla es n × (n − 1) ÷ 2. Si respondiste 20, contaste cada saludo dos veces."},{"tipo":"num","p":"Un lápiz y un borrador cuestan <b>$1.100</b> en total. El lápiz cuesta <b>$1.000 más</b> que el borrador. ¿Cuánto cuesta el borrador?","resp":50,"respTexto":"$50","unidad":"pesos","fbOk":"Verificaste: 50 + 1.050 = 1.100.","fbMal":" Si respondiste 100, el lápiz costaría 1.100 y juntos 1.200. La respuesta es 50: el borrador vale 50 y el lápiz 1.050. Este es el error de responder antes de terminar de leer."}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

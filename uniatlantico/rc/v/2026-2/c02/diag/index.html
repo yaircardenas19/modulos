@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 2</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><b>Inicio</b><span>›</span><a href="../../../../../../uniatlantico/rc/">Razonamiento Cuantitativo</a><span>›</span><a href="../../../../../../uniatlantico/rc/c02/">Cap. 2</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Repartir sin que sobre, coincidir sin fallar</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Respóndelo <b>antes</b> de tu clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Razonamiento Cuantitativo · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"¿Cuántos divisores tiene el número <b>12</b>?","resp":6,"fbOk":"Son 1, 2, 3, 4, 6 y 12.","fbMal":" Son seis: 1, 2, 3, 4, 6 y 12. Si te dieron más, quizá listaste múltiplos (12, 24, 36…), que son infinitos."},{"tipo":"mc","p":"¿Cuál de estos números es <b>primo</b>?","ops":["21","27","29","33"],"correcta":2,"fb":{"0":"21 = 3 × 7.","1":"27 = 3³.","2":"Bien: 29 solo se divide por 1 y por sí mismo.","3":"33 = 3 × 11."}},{"tipo":"num","p":"Escribe el <b>quinto múltiplo</b> de 7.","resp":35,"fbOk":"7 × 5 = 35.","fbMal":" Los múltiplos de 7 son 7, 14, 21, 28, 35… El quinto es 35."},{"tipo":"mc","p":"¿<b>144</b> es divisible por 3?","ops":["Sí, porque 1 + 4 + 4 = 9 y 9 es múltiplo de 3","No, porque termina en 4","Sí, porque es par","No se puede saber sin dividir"],"correcta":0,"fb":{"0":"Bien: ese es el criterio de divisibilidad por 3.","1":"La última cifra decide la divisibilidad por 2 y por 5, no por 3.","2":"Ser par decide la divisibilidad por 2, no por 3.","3":"Sí se puede: suma las cifras."}},{"tipo":"mc","p":"¿Cuál es la descomposición en factores primos de <b>36</b>?","ops":["2² × 3²","4 × 9","6²","2 × 18"],"correcta":0,"fb":{"0":"Bien: bajaste hasta que todos los factores fueran primos.","1":"Ni 4 ni 9 son primos: hay que seguir bajando.","2":"6 no es primo. 6² = 2² × 3².","3":"18 no es primo. Sigue descomponiendo."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>
