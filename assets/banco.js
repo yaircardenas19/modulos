@@ -754,6 +754,80 @@
     }
   ];
 
+  /* ═══════════ CAPÍTULO 14 · Gráficos y tablas de frecuencia ═══════════ */
+
+  G.c14 = [
+    function () {
+      var n = elegir([40, 50, 80, 120, 150, 200, 250]), k = ale(6, Math.floor(n * 0.6));
+      var q = elegir(["usan transporte público", "trabajan mientras estudian", "vienen de otro municipio",
+                      "perdieron el primer parcial", "tienen internet en casa"]);
+      return { niv: "N1", e: "De <b>" + n + " estudiantes</b> encuestados, <b>" + k + "</b> " + q +
+        ". ¿Cuál es la <b>frecuencia relativa</b>, en porcentaje? ¿Y la de los que no?",
+        s: limpio(k * 100 / n, 2) + " % y " + limpio((n - k) * 100 / n, 2) + " %. Se divide entre el <b>total</b>: " +
+           k + " ÷ " + n + " = " + limpio(k / n, 4) + ". Las dos tienen que sumar 100 %, y esa es la comprobación. " +
+           "Ojo: " + k + " es la frecuencia <b>absoluta</b>; solo sirve para comparar dentro de este mismo grupo." };
+    },
+    function () {
+      var p = elegir([5, 10, 12, 15, 20, 25, 30, 40, 45, 60]);
+      var g = elegir([36, 45, 72, 90, 120, 180]);
+      return { niv: "N1", e: "En un gráfico circular, ¿cuántos <b>grados</b> le corresponden a una porción del <b>" + p +
+        " %</b>? Y al revés: ¿qué <b>porcentaje</b> representa una porción de <b>" + g + "°</b>?",
+        s: limpio(p * 3.6, 1) + "° y " + limpio(g / 3.6, 2) + " %. Los 360 grados se reparten igual que los 100 puntos porcentuales: " +
+           "de porcentaje a grados se multiplica por 3,6 y de grados a porcentaje se divide entre 3,6. " +
+           "Es la proporcionalidad directa del capítulo 3, y la comprobación es que las porciones sumen 360°." };
+    },
+    function () {
+      var v = mezclar([
+        ["el salario mínimo de los últimos diez años", "líneas", "hay orden en el tiempo y lo que importa es la tendencia"],
+        ["el medio de transporte de los estudiantes del curso", "barras", "son categorías sin orden y se quiere comparar cuál es mayor"],
+        ["cómo se reparte el presupuesto del hogar por rubro", "circular", "las partes suman un total que existe de verdad"],
+        ["la estatura y el peso de 30 personas", "dispersión", "hay dos datos por cada persona y se busca si se mueven juntos"],
+        ["el número de goles de los cinco equipos punteros", "barras", "son categorías y se comparan entre sí"]
+      ]).slice(0, 4);
+      return { niv: "N2", e: "Di qué gráfico usarías en cada caso y por qué: " +
+        v.map(function (x, i) { return "<b>" + (i + 1) + ".</b> " + x[0]; }).join(" · "),
+        s: v.map(function (x, i) { return (i + 1) + ". <b>" + x[1] + "</b> — " + x[2] + "."; }).join(" ") +
+           " Regla corta: ante la duda, barras. Es el único que casi nunca está mal elegido." };
+    },
+    function () {
+      var n1 = elegir([80, 100, 120, 150, 200]), n2 = elegir([40, 50, 60]);
+      var k1 = Math.round(n1 * elegir([0.15, 0.2, 0.25, 0.3])), k2 = Math.round(n2 * elegir([0.4, 0.45, 0.5, 0.55]));
+      return { niv: "N2", e: "En el curso <b>A</b>, de <b>" + n1 + "</b> estudiantes perdieron <b>" + k1 +
+        "</b>. En el curso <b>B</b>, de <b>" + n2 + "</b> perdieron <b>" + k2 +
+        "</b>. Una noticia titula que al curso A le fue peor «porque son más reprobados». ¿Es correcto el titular? Sustenta con las dos frecuencias.",
+        s: "No es correcto. En A perdió el " + limpio(k1 * 100 / n1, 1) + " % y en B el " + limpio(k2 * 100 / n2, 1) +
+           " %: <b>a B le fue peor</b>. La frecuencia absoluta (" + k1 + " contra " + k2 +
+           ") solo compara dentro del mismo grupo; para comparar grupos de <b>distinto tamaño</b> hay que pasar a porcentaje. " +
+           "Es el mismo error de mirar el numerador sin el denominador que aparece en el capítulo 13." };
+    },
+    function () {
+      var t = elegir([80, 85, 90, 35, 60]);
+      var a = t + ale(3, 8), b = a + ale(5, 12);
+      var apar = (b - t) / (a - t), real = b / a;
+      return { niv: "N2", e: "Un gráfico de barras tiene el eje vertical <b>de " + t + " a " + (b + 2) +
+        "</b>. Dos barras valen <b>" + a + "</b> y <b>" + b + "</b>. ¿Cuántas veces más alta se <b>ve</b> la segunda? ¿Y cuánto la supera <b>de verdad</b>, en porcentaje?",
+        s: "Se ve " + limpio(apar, 2) + " veces más alta, porque el eje truncado deja visible solo " + (a - t) + " y " + (b - t) +
+           " unidades. De verdad la supera en " + limpio((b - a) * 100 / a, 1) + " % (" + b + " es " + limpio(real, 3) +
+           " veces " + a + "). <b>Lee el eje antes que las barras:</b> si no empieza en 0, ninguna comparación visual vale." };
+    },
+    function () {
+      var cats = mezclar([["Bus", 0], ["Moto", 0], ["A pie", 0], ["Bicicleta", 0], ["Carro", 0]]).slice(0, 4);
+      var v = [], tot = 0;
+      for (var i = 0; i < 4; i++) { var x = ale(5, 30); v.push(x); tot += x; }
+      var det = cats.map(function (c, i) { return c[0] + " " + v[i]; }).join(" · ");
+      var rel = cats.map(function (c, i) { return c[0] + " " + limpio(v[i] * 100 / tot, 1) + " %"; }).join(" · ");
+      var may = 0; for (var j = 1; j < 4; j++) if (v[j] > v[may]) may = j;
+      return { niv: "N3", e: "Se encuestó a un curso sobre cómo llega a la universidad: " + det +
+        ". Construye la <b>tabla de frecuencias completa</b> (absoluta y relativa), decide qué gráfico usarías y justifica por qué descartas los otros tres. " +
+        "Escribe además el título y la fuente que le pondrías.",
+        s: "Total: <b>" + tot + "</b> estudiantes. Relativas: " + rel +
+           ". Suman 100 % (puede dar 99,9 o 100,1 por redondeo). Gráfico: <b>barras</b>, porque la variable es cualitativa (sin orden natural, así que la línea queda descartada) y la pregunta es comparar categorías. " +
+           "El circular solo competiría si la pregunta fuera «qué parte del total», y la dispersión ni siquiera aplica: hay un solo dato por estudiante. " +
+           "La mayoría llega en " + cats[may][0].toLowerCase() + " (" + limpio(v[may] * 100 / tot, 1) + " %). " +
+           "El título debe decir qué muestra, y la fuente debe incluir fecha y <b>n = " + tot + "</b>: sin el n, un porcentaje no se puede evaluar." };
+    }
+  ];
+
   /* ── API ── */
   RC.banco = function (cap, n) {
     var gens = G[cap];
