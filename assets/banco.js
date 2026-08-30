@@ -828,6 +828,86 @@
     }
   ];
 
+  /* ═══════════ CAPÍTULO 15 · Centro y dispersión ═══════════ */
+
+  G.c15 = [
+    function () {
+      var v = [], s = 0;
+      for (var i = 0; i < 5; i++) { var x = ale(8, 30); v.push(x); s += x; }
+      return { niv: "N1", e: "Calcula el <b>promedio</b> de: <b>" + v.join(" · ") + "</b>. Comprueba después que <span class=\"mat\">media × n</span> devuelva la suma.",
+        s: "Suma = " + s + ", y son 5 datos: " + s + " ÷ 5 = <b>" + limpio(s / 5, 2) + "</b>. Comprobación: " +
+           limpio(s / 5, 2) + " × 5 = " + s + " ✓. Esa vuelta al total es lo único que la mediana no puede hacer." };
+    },
+    function () {
+      var base = [ale(4, 9), 0, ale(10, 16), ale(10, 16), ale(17, 25), ale(17, 25), ale(26, 34)];
+      base[1] = base[0];
+      while (base[3] === base[2]) base[3] = ale(10, 16);
+      while (base[5] === base[4]) base[5] = ale(17, 25);
+      var v = mezclar(base);
+      var ord = base.slice().sort(function (a, b) { return a - b; });
+      var med = ord[3];
+      var cuenta = {}; ord.forEach(function (x) { cuenta[x] = (cuenta[x] || 0) + 1; });
+      var moda = base[0];
+      return { niv: "N1", e: "Halla la <b>mediana</b> y la <b>moda</b> de: <b>" + v.join(" · ") +
+        "</b>. Cuidado: vienen desordenados.",
+        s: "Ordenados: " + ord.join(" · ") + ". Son 7 datos, así que la mediana es el <b>cuarto</b>: <b>" + med +
+           "</b>. La moda es el valor que más se repite: <b>" + moda + "</b> (aparece dos veces). " +
+           (v[3] === med ? "Aquí el cuarto de la lista desordenada coincidió por casualidad con la mediana; casi nunca pasa. " :
+              "Si tomaste el cuarto de la lista sin ordenar te dio " + v[3] + ", que no es la mediana. ") +
+           "Ordenar es el paso 1, siempre." };
+    },
+    function () {
+      var a = ale(20, 50) / 10, b = ale(20, 50) / 10, c = ale(20, 50) / 10;
+      var pond = a * 0.6 + b * 0.25 + c * 0.15, simple = (a + b + c) / 3;
+      return { niv: "N1", e: "En este curso el <b>parcial vale 60 %</b>, los <b>quices 25 %</b> y el <b>entregable de equipo 15 %</b>. " +
+        "Sacaste <b>" + dec(a, 1) + "</b> en el parcial, <b>" + dec(b, 1) + "</b> en los quices y <b>" + dec(c, 1) +
+        "</b> en el entregable. ¿Cuál es tu nota del corte?",
+        s: "<b>" + limpio(pond, 2) + "</b>. La cuenta es " + dec(a, 1) + " × 0,60 + " + dec(b, 1) + " × 0,25 + " +
+           dec(c, 1) + " × 0,15 = " + limpio(a * 0.6, 3) + " + " + limpio(b * 0.25, 3) + " + " + limpio(c * 0.15, 3) +
+           ". Promediarlas por igual daría " + limpio(simple, 2) + ", que <b>no es tu nota</b>. Comprobación: los pesos suman 1 (0,60 + 0,25 + 0,15)." };
+    },
+    function () {
+      var g = [], s = 0;
+      for (var i = 0; i < 6; i++) { var x = ale(60, 90) * 10; g.push(x); s += x; }
+      var extremo = elegir([3500, 4200, 5000, 6500]);
+      g.push(extremo); s += extremo;
+      var ord = g.slice().sort(function (a, b) { return a - b; });
+      var med = ord[3], media = s / 7;
+      return { niv: "N2", e: "Los arriendos de <b>siete</b> apartamentos de un barrio son, en miles de pesos: <b>" +
+        g.join(" · ") + "</b>. Calcula la media y la mediana. ¿Cuál de las dos publicarías en un aviso que diga «cuánto cuesta vivir aquí»? Justifica.",
+        s: "Media = " + limpio(media, 1) + " mil y mediana = <b>" + med + "</b> mil. Ordenados: " + ord.join(" · ") +
+           ". Se publica la <b>mediana</b>: el arriendo de " + extremo + " es un valor extremo que arrastra la media hacia arriba, " +
+           "y de hecho <b>seis de los siete</b> apartamentos cuestan menos que la media. En arriendos, precios de vivienda y salarios la mediana es siempre la medida honesta." };
+    },
+    function () {
+      var n1 = elegir([20, 25, 30, 35, 40]), n2 = elegir([15, 18, 20, 24]);
+      var m1 = ale(28, 38) / 10, m2 = ale(35, 46) / 10;
+      var comb = (n1 * m1 + n2 * m2) / (n1 + n2), ingenuo = (m1 + m2) / 2;
+      return { niv: "N2", e: "Un curso de <b>" + n1 + "</b> estudiantes promedia <b>" + dec(m1, 1) +
+        "</b> y otro de <b>" + n2 + "</b> promedia <b>" + dec(m2, 1) + "</b>. ¿Cuál es el promedio de los <b>" +
+        (n1 + n2) + "</b> juntos? (No es " + limpio(ingenuo, 2) + ".)",
+        s: "<b>" + limpio(comb, 3) + "</b>. Hay que volver a los totales: " + n1 + " × " + dec(m1, 1) + " = " +
+           dec(n1 * m1, 1) + " puntos y " + n2 + " × " + dec(m2, 1) + " = " + dec(n2 * m2, 1) + " puntos. " +
+           "Se suman y se dividen entre " + (n1 + n2) + ". Promediar los dos promedios daría " + limpio(ingenuo, 2) +
+           ", y eso solo sería correcto si los dos cursos tuvieran el mismo tamaño. Es una media <b>ponderada</b>, con los tamaños como pesos." };
+    },
+    function () {
+      var m = ale(8, 16), d = elegir([1, 2, 3]);
+      var v = [m - 2 * d, m - d, m, m + d, m + 2 * d];
+      var varianza = (4 * d * d + d * d + 0 + d * d + 4 * d * d) / 5;
+      var s = Math.sqrt(varianza);
+      return { niv: "N3", e: "Calcula la <b>media</b>, el <b>rango</b> y la <b>desviación estándar</b> de: <b>" +
+        v.join(" · ") + "</b>, siguiendo los cinco pasos del bloque 6. " +
+        "Después inventa otro conjunto de <b>cinco datos con la misma media</b> pero con una desviación mucho menor, y explica en qué se diferencian los dos grupos.",
+        s: "Media = <b>" + m + "</b> (los datos están simétricos alrededor de ella). Rango = " + (m + 2 * d) + " − " +
+           (m - 2 * d) + " = <b>" + (4 * d) + "</b>. Desviaciones: −" + (2 * d) + ", −" + d + ", 0, " + d + ", " + (2 * d) +
+           "; al cuadrado: " + (4 * d * d) + ", " + (d * d) + ", 0, " + (d * d) + ", " + (4 * d * d) + "; suman " +
+           (10 * d * d) + ". Varianza = " + (10 * d * d) + " ÷ 5 = " + limpio(varianza, 2) + " y la desviación es su raíz: <b>" +
+           limpio(s, 3) + "</b>. Un conjunto como " + [m, m, m, m, m].join(" · ") +
+           " tiene la misma media y desviación <b>0</b>: mismo centro, grupos completamente distintos. Por eso un promedio nunca se reporta solo." };
+    }
+  ];
+
   /* ── API ── */
   RC.banco = function (cap, n) {
     var gens = G[cap];
