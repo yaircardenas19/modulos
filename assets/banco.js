@@ -490,6 +490,144 @@
     }
   ];
 
+  /* ═══════════ CAPÍTULO 9 · Unidades y conversión ═══════════ */
+  G.c09 = [
+    function () {
+      var pares = [["kilogramos", "gramos", 1000], ["metros", "centímetros", 100],
+                   ["litros", "mililitros", 1000], ["kilómetros", "metros", 1000]];
+      var p = elegir(pares), v = ale(15, 95) / 10;
+      return { niv: "N1", e: "Convierte <b>" + dec(v, 1).replace(/,0$/, "") + " " + p[0] + "</b> a <b>" + p[1] + "</b>.",
+        s: limpio(v * p[2], 2) + " " + p[1] + ". El " + p[1].slice(0, -1) + " es más pequeño, así que el número sube: se multiplica por " + p[2] + "." };
+    },
+    function () {
+      var lb = ale(3, 40);
+      return { niv: "N1", e: "En la plaza de mercado, ¿cuántos <b>gramos</b> son <b>" + lb + " libras</b>? ¿Y cuántos kilogramos?",
+        s: (lb * 500) + " g, es decir " + limpio(lb * 0.5, 2) + " kg. La libra de plaza son 500 g. Con la libra internacional (453,6 g) darían " +
+           limpio(lb * 453.6, 1) + " g: casi un 10 % menos." };
+    },
+    function () {
+      var bultos = ale(8, 40), kg = elegir([25, 50]), porc = elegir([50, 80, 100, 125, 200]);
+      return { niv: "N2", e: "Un camión lleva <b>" + bultos + " bultos</b> de <b>" + kg +
+        " kg</b>. Si cada porción usa <b>" + porc + " g</b>, ¿para cuántas porciones alcanza toda la carga?",
+        s: (bultos * kg * 1000 / porc) + " porciones. Cadena: " + bultos + " bultos × (" + kg + " kg / bulto) × (1.000 g / kg) × (1 porción / " +
+           porc + " g). Se cancelan bultos, kg y g, y sobrevive «porción»." };
+    },
+    function () {
+      var gal = ale(2, 8), ml = elegir([25, 30, 50, 60]);
+      var total = gal * 3785;
+      return { niv: "N2", e: "Una caneca trae <b>" + gal + " galones</b> (1 galón = 3.785 ml). Si cada preparación usa <b>" + ml +
+        " ml</b>, ¿para cuántas preparaciones alcanza?",
+        s: Math.floor(total / ml) + " preparaciones completas (salen " + limpio(total / ml, 1) + ", y no se puede hacer una a medias). Son " +
+           total + " ml en total." };
+    },
+    function () {
+      var ha = ale(2, 12) / 2;
+      return { niv: "N2", e: "Un terreno mide <b>" + dec(ha, 1).replace(/,0$/, "") + " hectáreas</b>. ¿Cuántos <b>metros cuadrados</b> son? " +
+        "Si el metro cuadrado vale $95.000, ¿cuánto vale el terreno?",
+        s: limpio(ha * 10000, 0) + " m² y " + pesos(ha * 10000 * 95000) + ". Una hectárea son 10.000 m²." };
+    },
+    function () {
+      var m = ale(12, 48) / 10, cm = ale(15, 95);
+      return { niv: "N2", e: "Un mesón mide <b>" + dec(m, 2).replace(/,?0+$/, "") + " m</b> y una extensión mide <b>" + cm +
+        " cm</b>. ¿Cuánto miden juntos? Da la respuesta en metros <b>y</b> en centímetros.",
+        s: limpio(m * 100 + cm, 0) + " cm, es decir " + limpio(m + cm / 100, 2) + " m. Hay que igualar la unidad antes de sumar: no se puede responder «" +
+           limpio(m + cm, 2) + "» sin decir de qué." };
+    }
+  ];
+
+  /* ═══════════ CAPÍTULO 10 · Perímetro, área y volumen ═══════════ */
+  G.c10 = [
+    function () {
+      var a = ale(30, 90) / 10, b = ale(20, 60) / 10;
+      return { niv: "N1", e: "Un cuarto rectangular mide <b>" + dec(a, 1) + " m</b> por <b>" + dec(b, 1) +
+        " m</b>. Calcula su <b>perímetro</b> y su <b>área</b>.",
+        s: "Perímetro " + limpio(2 * (a + b), 2) + " m · Área " + limpio(a * b, 2) +
+           " m². Ojo con las unidades: el perímetro va en m y el área en m²." };
+    },
+    function () {
+      var lado = elegir([20, 25, 30, 40, 50]);
+      return { niv: "N1", e: "Una baldosa cuadrada mide <b>" + lado + " cm</b> de lado. ¿Cuál es su área en <b>cm²</b> y en <b>m²</b>?",
+        s: (lado * lado) + " cm² = " + limpio(lado * lado / 10000, 4) + " m². Se divide entre <b>10.000</b>, no entre 100: el factor va al cuadrado porque el área tiene dos dimensiones." };
+    },
+    function () {
+      var lado = elegir([20, 25, 30, 40, 50]), n1 = ale(8, 20), n2 = ale(6, 16);
+      var L = n1 * lado / 100, A = n2 * lado / 100;
+      return { niv: "N2", e: "Un piso mide <b>" + limpio(L, 2) + " m × " + limpio(A, 2) + " m</b> y se embaldosa con piezas de <b>" +
+        lado + " × " + lado + " cm</b>. ¿Cuántas baldosas se necesitan? Agrega el 10 % de obra.",
+        s: (n1 * n2) + " baldosas exactas, y con el 10 % de obra hay que comprar " + Math.ceil(n1 * n2 * 1.1) +
+           ". Verifica contando: " + n1 + " a lo largo × " + n2 + " a lo ancho." };
+    },
+    function () {
+      var cm2 = elegir([900, 1600, 2500, 400, 4500, 12000]);
+      return { niv: "N1", e: "Convierte <b>" + cm2 + " cm²</b> a <b>metros cuadrados</b>.",
+        s: limpio(cm2 / 10000, 4) + " m². Se divide entre 10.000. Si dividiste entre 100 te dio " +
+           limpio(cm2 / 100, 2) + " m², que es cien veces más grande de lo que es." };
+    },
+    function () {
+      var a = ale(25, 50) / 10, b = ale(20, 40) / 10, h = elegir([2.4, 2.5, 2.6]);
+      return { niv: "N2", e: "Un cuarto mide <b>" + dec(a, 1) + " × " + dec(b, 1) + " × " + dec(h, 1) +
+        " m</b> de alto. ¿Cuál es su <b>volumen</b> y a cuántos <b>litros</b> de aire equivale?",
+        s: limpio(a * b * h, 2) + " m³, es decir " + limpio(a * b * h * 1000, 0) + " litros. Recuerda: 1 m³ = 1.000 litros, no un millón." };
+    },
+    function () {
+      var a = ale(40, 70) / 10, b = ale(25, 45) / 10, h = elegir([2.4, 2.5]);
+      var pared = 2 * (a + b) * h, puerta = 1.6, vent = 1.2;
+      var neta = pared - puerta - vent, rinde = 35, manos = 2;
+      return { niv: "N3", e: "Un cuarto de <b>" + dec(a, 1) + " × " + dec(b, 1) + " m</b> y <b>" + dec(h, 1) +
+        " m</b> de alto se va a pintar. Tiene una puerta de 0,80 × 2,00 m y una ventana de 1,20 × 1,00 m. " +
+        "La pintura rinde 35 m² por galón y por mano, y se dan 2 manos. ¿Cuántos galones hay que comprar?",
+        s: "Paredes: " + limpio(pared, 2) + " m². Menos puerta (1,6) y ventana (1,2): " + limpio(neta, 2) +
+           " m². Con dos manos: " + limpio(neta * manos, 2) + " m². Entre 35: " + limpio(neta * manos / rinde, 2) +
+           " galones → hay que comprar <b>" + Math.ceil(neta * manos / rinde) + "</b>. Al comprar material siempre se redondea hacia arriba." };
+    }
+  ];
+
+  /* ═══════════ CAPÍTULO 11 · Escala y transformaciones ═══════════ */
+  G.c11 = [
+    function () {
+      var esc = elegir([25, 50, 75, 100]), pc = ale(20, 120) / 10;
+      return { niv: "N1", e: "En un plano a escala <b>1:" + esc + "</b>, una pared mide <b>" + dec(pc, 1).replace(/,0$/, "") +
+        " cm</b>. ¿Cuánto mide de verdad, en metros?",
+        s: limpio(pc * esc / 100, 2) + " m. Del plano a la realidad se <b>multiplica</b> por " + esc + ": " +
+           limpio(pc * esc, 1) + " cm." };
+    },
+    function () {
+      var esc = elegir([25, 50, 75, 100]), real = ale(8, 60) / 10;
+      return { niv: "N1", e: "Un mueble mide <b>" + dec(real, 2).replace(/,?0+$/, "") + " m</b>. En un plano a escala <b>1:" + esc +
+        "</b>, ¿cuántos centímetros mide?",
+        s: limpio(real * 100 / esc, 2) + " cm. De la realidad al plano se <b>divide</b>: " + limpio(real * 100, 1) + " cm ÷ " + esc + "." };
+    },
+    function () {
+      var esc = elegir([50, 100, 200, 500]), pc = ale(3, 12);
+      return { niv: "N2", e: "En un plano, una distancia mide <b>" + pc + " cm</b> y en la realidad mide <b>" +
+        limpio(pc * esc / 100, 2) + " m</b>. ¿Cuál es la escala?",
+        s: "1 : " + esc + ". Se pasan las dos a la misma unidad y se divide la real entre la del dibujo: " +
+           limpio(pc * esc, 0) + " cm ÷ " + pc + " cm = " + esc + "." };
+    },
+    function () {
+      var k = elegir([2, 3, 4, 5]);
+      return { niv: "N2", e: "Las longitudes de una figura se multiplican por <b>" + k +
+        "</b>. ¿Por cuánto se multiplica su <b>área</b>? ¿Y su <b>volumen</b>, si fuera un cuerpo?",
+        s: "El área por " + (k * k) + " (que es " + k + "²) y el volumen por " + (k * k * k) + " (que es " + k +
+           "³). Los ángulos no cambian nunca." };
+    },
+    function () {
+      var v = mezclar([["deslizar un mueble sin girarlo", "traslación"], ["verse en un espejo", "reflexión"],
+                       ["girar una llave", "rotación"], ["fotocopiar al 200 %", "cambio de escala"]]);
+      return { niv: "N1", e: "Identifica la transformación en cada caso: " + v.map(function (x) { return x[0]; }).join(" · ") + ".",
+        s: v.map(function (x) { return x[0] + " → " + x[1]; }).join(" · ") +
+           ". Las tres primeras son movimientos rígidos: conservan tamaño, ángulos y área. La última cambia el tamaño pero conserva la forma." };
+    },
+    function () {
+      var esc = elegir([50, 75, 100]), a = ale(40, 90) / 10, b = ale(30, 60) / 10;
+      return { niv: "N3", e: "Un plano a escala <b>1:" + esc + "</b> muestra una sala de <b>" + limpio(a, 1) + " cm × " +
+        limpio(b, 1) + " cm</b>. Halla sus dimensiones reales, su área real y comprueba que la razón entre el área real y la del plano sea " + esc + "².",
+        s: "Real: " + limpio(a * esc / 100, 2) + " m × " + limpio(b * esc / 100, 2) + " m, con área " +
+           limpio(a * b * esc * esc / 10000, 2) + " m². Área del plano: " + limpio(a * b, 2) + " cm². La razón entre las dos, en las mismas unidades, da " +
+           (esc * esc) + " = " + esc + "². Las longitudes van por " + esc + " y las áreas por " + esc + "²." };
+    }
+  ];
+
   /* ── API ── */
   RC.banco = function (cap, n) {
     var gens = G[cap];
