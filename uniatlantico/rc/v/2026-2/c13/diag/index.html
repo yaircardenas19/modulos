@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 13</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><b>Inicio</b><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/rc/">Razonamiento Cuantitativo</a><span>›</span><a href="../../../../../../uniatlantico/rc/c13/">Cap. 13</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Lo que puede pasar</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Respóndelo <b>antes</b> de tu clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Razonamiento Cuantitativo · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"mc","p":"Se lanza un dado corriente de seis caras. La probabilidad de sacar un <b>5</b> es:","ops":["1/5","1/6","5/6","1/2"],"correcta":1,"fb":{"0":"Hay seis caras, no cinco. El denominador es el total de resultados posibles.","1":"Bien: un caso favorable de seis posibles.","2":"5/6 es la probabilidad de <b>no</b> sacar 5. Es el complemento.","3":"El dado no tiene dos caras, tiene seis. La mitad sería la probabilidad de sacar par."}},{"tipo":"mc","p":"Se lanza una moneda tres veces y sale <b>cara las tres veces</b>. La probabilidad de que la cuarta sea cara es:","ops":["Mayor que 1/2","Menor que 1/2","Igual a 1/2","1/16"],"correcta":2,"fb":{"0":"La moneda no viene «caliente». No recuerda nada de lo anterior.","1":"Esta es la falacia del jugador, la respuesta más común y la más falsa. El azar no se acomoda para equilibrarse.","2":"Bien: la moneda no tiene memoria. Sigue siendo 1/2.","3":"1/16 es la probabilidad de que salgan <b>cuatro caras seguidas vistas desde antes de empezar</b>. Pero tres ya salieron: eso ya no es incierto."}},{"tipo":"num","p":"En una bolsa hay <b>3 bolas rojas</b> y <b>7 azules</b>. Sacas una sin mirar. ¿Qué <b>porcentaje</b> de probabilidad hay de que salga roja?","resp":30,"unidad":"%","fbOk":"Correcto: 3 de 10.","fbMal":" 3 favorables de 10 posibles: 3 ÷ 10 = 0,3 = 30 %. Si respondiste 3, contaste solo las favorables. Si respondiste 43, usaste 3/7: el denominador es el <b>total</b>, no las que sobran."},{"tipo":"mc","p":"¿Cuál de estos números <b>NO puede</b> ser una probabilidad?","ops":["0","0,45","1","1,4"],"correcta":3,"fb":{"0":"0 sí puede: es la probabilidad de un evento imposible.","1":"0,45 está entre 0 y 1, así que es perfectamente válida.","2":"1 sí puede: es la probabilidad de un evento seguro.","3":"Bien: toda probabilidad vive entre 0 y 1. Si te da más de 1, casi siempre invertiste la fracción."}},{"tipo":"num","p":"Si la probabilidad de que llueva mañana es <b>0,3</b>, ¿cuál es la probabilidad de que <b>no</b> llueva?","resp":0.7,"respTexto":"0,7","fbOk":"Usaste la regla del complemento.","fbMal":" 1 − 0,3 = 0,7. Llover y no llover agotan todos los casos, así que las dos probabilidades tienen que sumar 1."}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

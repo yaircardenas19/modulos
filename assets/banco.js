@@ -689,6 +689,71 @@
     }
   ];
 
+  /* ═══════════ CAPÍTULO 13 · Probabilidad ═══════════ */
+
+  G.c13 = [
+    function () {
+      var r = ale(2, 8), a = ale(3, 12), t = r + a;
+      var col = elegir([["rojas", "azules"], ["blancas", "negras"], ["verdes", "amarillas"]]);
+      var g = mcd(r, t);
+      return { niv: "N1", e: "En una bolsa hay <b>" + r + " bolas " + col[0] + "</b> y <b>" + a + " " + col[1] +
+        "</b>. Sacas una sin mirar. ¿Qué probabilidad hay de que salga " + col[0].replace(/s$/, "") + "? Escríbela en fracción, decimal y porcentaje.",
+        s: r + "/" + t + (g > 1 ? " = " + (r / g) + "/" + (t / g) : "") + " = " + limpio(r / t, 4) + " = " +
+           limpio(r * 100 / t, 2) + " %. Favorables: " + r + ". Posibles: <b>" + t + "</b>, que es el total, no las que sobran. " +
+           "Comprobación: P(" + col[1].replace(/s$/, "") + ") = " + a + "/" + t + ", y las dos suman 1." };
+    },
+    function () {
+      var p = elegir([10, 15, 20, 25, 30, 35, 40, 60, 75, 80]);
+      var cosa = elegir(["que llueva mañana", "que el bus pase en menos de 5 minutos",
+                         "que a Daniela le den propina en un domicilio", "que haya fila en la tienda"]);
+      return { niv: "N1", e: "La probabilidad de <b>" + cosa + "</b> es del <b>" + p +
+        " %</b>. ¿Cuál es la probabilidad de que <b>no</b> ocurra? Da la respuesta en porcentaje y en decimal.",
+        s: (100 - p) + " % = " + limpio((100 - p) / 100, 2) + ". Regla del complemento: P(no A) = 1 − P(A). " +
+           "Que ocurra y que no ocurra agotan todos los casos, así que las dos probabilidades tienen que sumar 1 (o 100 %)." };
+    },
+    function () {
+      var n = elegir([2, 3, 4]), cara = Math.pow(2, n);
+      return { niv: "N2", e: "Se lanza una moneda <b>" + n + " veces seguidas</b>. ¿Cuántos resultados posibles hay? ¿Qué probabilidad hay de que salga <b>cara todas las veces</b>? ¿Y de que salga <b>al menos un sello</b>?",
+        s: cara + " resultados posibles (2" + (n === 2 ? "²" : n === 3 ? "³" : "⁴") + ", por el principio multiplicativo del capítulo 12). " +
+           "P(todas cara) = 1/" + cara + " = " + limpio(1 / cara, 4) + ". " +
+           "P(al menos un sello) = 1 − 1/" + cara + " = " + (cara - 1) + "/" + cara + " = " + limpio((cara - 1) / cara, 4) +
+           ". La segunda se hace por <b>complemento</b>: enumerar todos los casos con al menos un sello es mucho más largo y da lo mismo." };
+    },
+    function () {
+      var v = elegir([[3, "que la suma sea 4", 3], [4, "que la suma sea 5", 4], [5, "que la suma sea 6", 5],
+                      [6, "que la suma sea 7", 6], [7, "que la suma sea 8", 5], [8, "que la suma sea 9", 4]]);
+      return { niv: "N2", e: "Se lanzan <b>dos dados</b> corrientes. ¿Qué probabilidad hay de <b>" + v[1] + "</b>?",
+        s: v[2] + "/36 = " + limpio(v[2] / 36, 4) + " = " + limpio(v[2] * 100 / 36, 2) +
+           " %. La tabla de dos dados tiene <b>36 casillas</b> (6 × 6), no 11 ni 12: el 3-4 y el 4-3 son casillas distintas. " +
+           "De esas 36, " + v[2] + " dan esa suma. Ese es justo el error de juntar resultados que se ven iguales pero no lo son." };
+    },
+    function () {
+      var t = ale(24, 45), a = ale(8, 15), b = ale(8, 15), amb = ale(2, 6);
+      if (a + b - amb > t) { a = Math.floor(t / 3); b = Math.floor(t / 3); amb = 2; }
+      var uno = a + b - amb;
+      return { niv: "N2", e: "En un curso de <b>" + t + " estudiantes</b>, <b>" + a + "</b> usan transporte público y <b>" + b +
+        "</b> trabajan, y <b>" + amb + "</b> hacen las dos cosas. Se escoge una persona al azar. ¿Qué probabilidad hay de que <b>use transporte público o trabaje</b>?",
+        s: uno + "/" + t + " = " + limpio(uno / t, 4) + " = " + limpio(uno * 100 / t, 2) + " %. Aquí <b>no</b> se suman y ya: " +
+           a + " + " + b + " = " + (a + b) + " contaría dos veces a los " + amb +
+           " que están en los dos grupos. Hay que restarlos: " + a + " + " + b + " − " + amb + " = " + uno +
+           ". La suma simple solo vale cuando los dos eventos no pueden ocurrir juntos." };
+    },
+    function () {
+      var boletas = elegir([120, 150, 200, 250, 300, 400]), mias = ale(2, 8);
+      var precio = elegir([2000, 3000, 5000]);
+      return { niv: "N3", e: "El salón rifa un mercado con <b>" + boletas + " boletas</b> a <b>" + pesos(precio) +
+        "</b> cada una. Daniela compró <b>" + mias + "</b>. Calcula su probabilidad de ganar el primer premio en fracción y en porcentaje. " +
+        "Después: sale la primera boleta y <b>no es suya</b>. ¿Cuál es ahora su probabilidad del segundo premio? ¿Subió o bajó? " +
+        "Por último, ¿cuánto recauda el salón y cuánto vale «en promedio» cada boleta si el mercado cuesta " + pesos(boletas * precio * 0.4) + "?",
+        s: "P(primer premio) = " + mias + "/" + boletas + " = " + limpio(mias * 100 / boletas, 3) +
+           " %. Tras salir una boleta ajena quedan <b>" + (boletas - 1) + "</b>, así que P = " + mias + "/" + (boletas - 1) + " = " +
+           limpio(mias * 100 / (boletas - 1), 3) + " %: <b>subió</b>, porque el total bajó y sus boletas siguen ahí. " +
+           "Recaudo: " + boletas + " × " + pesos(precio) + " = " + pesos(boletas * precio) + ". Valor promedio de una boleta para el comprador: " +
+           pesos(boletas * precio * 0.4) + " ÷ " + boletas + " = " + pesos(precio * 0.4) + ", o sea " +
+           "40 centavos por cada peso gastado. La diferencia es la ganancia del salón: eso es lo que hay que discutir, no la suerte." };
+    }
+  ];
+
   /* ── API ── */
   RC.banco = function (cap, n) {
     var gens = G[cap];
