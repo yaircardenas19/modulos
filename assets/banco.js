@@ -30,6 +30,12 @@
   }
   function mcd(a, b) { while (b) { var t = b; b = a % b; a = t; } return a; }
   function mcm(a, b) { return a * b / mcd(a, b); }
+  /* ── conteo (caps. 12 y 13) ── */
+  function mil(n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
+  function fact(n) { var r = 1; for (var i = 2; i <= n; i++) r *= i; return r; }
+  function perm(n, r) { var v = 1; for (var i = 0; i < r; i++) v *= (n - i); return v; }
+  function comb(n, r) { return perm(n, r) / fact(r); }
+  function bajando(n, r) { var v = []; for (var i = 0; i < r; i++) v.push(n - i); return v.join(" × "); }
   function factorizar(n) {
     var f = [], d = 2;
     while (n > 1) { var e = 0; while (n % d === 0) { n /= d; e++; } if (e) f.push([d, e]); d++; if (d * d > n && n > 1) { f.push([n, 1]); break; } }
@@ -625,6 +631,61 @@
         s: "Real: " + limpio(a * esc / 100, 2) + " m × " + limpio(b * esc / 100, 2) + " m, con área " +
            limpio(a * b * esc * esc / 10000, 2) + " m². Área del plano: " + limpio(a * b, 2) + " cm². La razón entre las dos, en las mismas unidades, da " +
            (esc * esc) + " = " + esc + "². Las longitudes van por " + esc + " y las áreas por " + esc + "²." };
+    }
+  ];
+
+  /* ═══════════ CAPÍTULO 12 · Conteo ═══════════ */
+
+  G.c12 = [
+    function () {
+      var a = ale(3, 6), b = ale(3, 5), c = ale(2, 4);
+      return { niv: "N1", e: "Karen ofrece <b>" + a + " tipos de arepa</b>, <b>" + b + " bebidas</b> y <b>" + c +
+        " adiciones</b>. Un combo lleva una de cada cosa. ¿Cuántos combos distintos hay?",
+        s: mil(a * b * c) + " combos. Se <b>multiplica</b>: " + a + " × " + b + " × " + c + " = " + mil(a * b * c) +
+           ". Si sumaras darían " + (a + b + c) + ", que es el error de leer «y» como suma. Dibuja el árbol con 2 arepas y " + b +
+           " bebidas y cuenta las puntas: son " + (2 * b) + ", no " + (2 + b) + "." };
+    },
+    function () {
+      var n = ale(4, 7), q = elegir([["personas", "sillas en fila"], ["libros", "puestos del estante"], ["fotos", "marcos de la pared"]]);
+      return { niv: "N1", e: "¿De cuántas maneras se pueden acomodar <b>" + n + " " + q[0] + "</b> en <b>" + n + " " + q[1] + "</b>?",
+        s: mil(fact(n)) + " maneras, que es " + n + "! = " + bajando(n, n) + ". En el primer puesto caben " + n +
+           ", en el segundo quedan " + (n - 1) + ", y así hasta 1. El factorial <b>baja de uno en uno hasta 1</b>: no es " + n +
+           " multiplicado por sí mismo " + n + " veces, que daría " + mil(Math.pow(n, n)) + "." };
+    },
+    function () {
+      var n = ale(5, 9), r = elegir([2, 3]);
+      var cargos = r === 2 ? "presidente y secretario" : "presidente, secretario y tesorero";
+      return { niv: "N2", e: "De <b>" + n + " candidatos</b> se eligen <b>" + cargos + "</b>. ¿De cuántas maneras se puede formar la mesa directiva?",
+        s: mil(perm(n, r)) + ". Los cargos son distintos, así que <b>sí importa el orden</b>: es una permutación P(" + n + "," + r +
+           ") = " + bajando(n, r) + " = " + mil(perm(n, r)) + ". Si los " + r +
+           " elegidos no tuvieran cargo, habría que dividir entre " + r + "! = " + fact(r) + " y quedarían " + mil(comb(n, r)) + "." };
+    },
+    function () {
+      var n = ale(6, 10), r = elegir([2, 3, 4]);
+      if (r >= n) r = 3;
+      return { niv: "N2", e: "De un grupo de <b>" + n + " estudiantes</b> se escogen <b>" + r +
+        "</b> para un comité <b>sin cargos</b>. ¿Cuántos comités distintos hay?",
+        s: mil(comb(n, r)) + " comités. Aquí <b>no importa el orden</b>: es una combinación C(" + n + "," + r + ") = (" +
+           bajando(n, r) + ") ÷ " + r + "! = " + mil(perm(n, r)) + " ÷ " + fact(r) + " = " + mil(comb(n, r)) +
+           ". Se divide entre " + r + "! porque el mismo comité se contó " + fact(r) + " veces, una por cada orden." };
+    },
+    function () {
+      var d = elegir([3, 4]);
+      var con = Math.pow(10, d), sin_ = perm(10, d);
+      return { niv: "N2", e: "Una clave tiene <b>" + d + " dígitos</b> del 0 al 9. ¿Cuántas claves hay si <b>se pueden repetir</b> los dígitos? ¿Y si tienen que ser <b>todos distintos</b>?",
+        s: "Con repetición: " + mil(con) + " (10" + (d === 3 ? "³" : "⁴") + ", porque en cada casilla vuelven a caber las 10 cifras). Sin repetir: " +
+           bajando(10, d) + " = " + mil(sin_) + ". La diferencia son " + mil(con - sin_) +
+           " claves. La palabra <b>«distintos»</b> del enunciado es la que decide toda la cuenta: subráyala." };
+    },
+    function () {
+      var m = ale(4, 6), h = ale(4, 6), k = 2, r = 3;
+      var tot = comb(m, k) * comb(h, r - k);
+      return { niv: "N3", e: "Un curso tiene <b>" + m + " mujeres</b> y <b>" + h +
+        " hombres</b>. Se arma un comité de <b>3 personas sin cargos</b> en el que debe haber <b>exactamente 2 mujeres</b>. ¿Cuántos comités cumplen la condición? Compara con el total de comités de 3 sin ninguna condición.",
+        s: mil(tot) + " comités. Se escogen las mujeres y los hombres por separado y se <b>multiplica</b>: C(" + m + ",2) × C(" + h +
+           ",1) = " + comb(m, k) + " × " + h + " = " + mil(tot) + ". Sin condición serían C(" + (m + h) + ",3) = " + mil(comb(m + h, 3)) +
+           ", así que la condición deja fuera " + mil(comb(m + h, 3) - tot) +
+           ". Dos comprobaciones: el resultado con condición nunca puede pasar del total, y en ningún paso importa el orden." };
     }
   ];
 

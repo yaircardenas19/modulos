@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 12</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><b>Inicio</b><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/rc/">Razonamiento Cuantitativo</a><span>›</span><a href="../../../../../../uniatlantico/rc/c12/">Cap. 12</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Contar sin contar uno por uno</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Respóndelo <b>antes</b> de tu clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Razonamiento Cuantitativo · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"Tienes <b>2 camisas</b> y <b>3 pantalones</b>. ¿Cuántas combinaciones distintas de ropa puedes armar?","resp":6,"fbOk":"Multiplicaste: cada camisa se combina con los tres pantalones.","fbMal":" 2 × 3 = 6. Si respondiste 5, sumaste. La palabra «y» aquí significa «uno de cada uno», no «uno u otro»: dibuja el árbol y cuenta las puntas."},{"tipo":"num","p":"¿De cuántas maneras se pueden sentar <b>3 personas</b> en <b>3 sillas</b> en fila?","resp":6,"fbOk":"Bien: 3 × 2 × 1. Al ocupar una silla queda una persona menos.","fbMal":" 3 × 2 × 1 = 6. En la primera silla caben 3 personas, en la segunda quedan 2 y en la tercera 1. Si respondiste 9, multiplicaste 3 × 3: eso sería si una persona pudiera sentarse dos veces."},{"tipo":"num","p":"Calcula <b>5!</b> (cinco factorial), que es 5 × 4 × 3 × 2 × 1.","resp":120,"fbOk":"Correcto.","fbMal":" 5! = 5 × 4 × 3 × 2 × 1 = 120. El factorial <b>baja de uno en uno hasta 1</b>; no es una potencia. Si te dio 3.125 calculaste 5⁵."},{"tipo":"mc","p":"Si en un concurso hay 4 participantes y se premian <b>primero y segundo</b> puesto, ¿importa el orden?","ops":["Sí","No","Depende del premio","Nunca importa"],"correcta":0,"fb":{"0":"Bien: quedar primero no es lo mismo que quedar segundo. Eso es una permutación.","1":"Sí importa. Ana primera y Luis segundo no es el mismo resultado que Luis primero y Ana segunda.","2":"No depende del premio: depende de si los puestos son distinguibles, y aquí lo son.","3":"A veces importa y a veces no — esa distinción es justamente el capítulo."}},{"tipo":"mc","p":"Si de un grupo de <b>4 amigos</b> se escogen <b>2</b> para hacer un trabajo, ¿importa el orden en que los escojas?","ops":["Sí","No","Solo si son de distinto semestre","Siempre importa"],"correcta":1,"fb":{"0":"Escoger a Ana y a Luis es el mismo equipo que escoger a Luis y a Ana. No hay cargos.","1":"Bien: no hay puestos que distinguir, así que es una combinación.","2":"El semestre no cambia el conteo. Lo que decide es si hay cargos distintos o no.","3":"Compara con la pregunta anterior: se ven casi iguales y la respuesta es contraria."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>
