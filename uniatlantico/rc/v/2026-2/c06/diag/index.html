@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 6</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><b>Inicio</b><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/rc/">Razonamiento Cuantitativo</a><span>›</span><a href="../../../../../../uniatlantico/rc/c06/">Cap. 6</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Escribir con letras lo que se dice con palabras</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Respóndelo <b>antes</b> de tu clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Razonamiento Cuantitativo · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"Si <span class=\"mat\">x = 4</span>, ¿cuánto vale <b>3x + 5</b>?","resp":17,"fbOk":"Primero multiplicas, después sumas.","fbMal":" 3 × 4 = 12, y 12 + 5 = 17. Cuidado con el orden de las operaciones."},{"tipo":"mc","p":"«El <b>doble</b> de un número, <b>disminuido en 3</b>» se escribe:","ops":["2x − 3","2(x − 3)","x − 3","3 − 2x"],"correcta":0,"fb":{"0":"Bien: primero se duplica el número y después se resta 3.","1":"Eso sería «el doble de (un número disminuido en 3)». La coma cambia el agrupamiento.","2":"Ahí falta el doble.","3":"Eso es «3 menos el doble de un número», que es otra cosa."}},{"tipo":"num","p":"Resuelve: <b>2x − 7 = 11</b>. ¿Cuánto vale <span class=\"mat\">x</span>?","resp":9,"fbOk":"Y si reemplazas: 2(9) − 7 = 11 ✓","fbMal":" Suma 7 a los dos lados: 2x = 18. Divide entre 2: x = 9. Verifícalo reemplazando."},{"tipo":"mc","p":"«<b>5 menos que</b> un número» se escribe:","ops":["5 − x","x − 5","x + 5","5x"],"correcta":1,"fb":{"0":"Es el error más común del capítulo. Pruébalo con 20: «5 menos que 20» son 15, y 5 − 20 = −15.","1":"Bien. «5 menos que 20» son 15, que es 20 − 5.","2":"Eso sería «5 más que un número».","3":"Eso sería «5 veces un número»."}},{"tipo":"num","p":"Un taxi cobra <b>$3.000</b> de banderazo más <b>$2.500 por kilómetro</b>. ¿Cuánto cuesta un viaje de <b>4 km</b>?","resp":13000,"respTexto":"$13.000","unidad":"pesos","fbOk":"El banderazo se paga una sola vez; el kilómetro, cuatro.","fbMal":" 3.000 + 2.500 × 4 = 3.000 + 10.000 = 13.000. Si te dio 22.000, multiplicaste el banderazo también."}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

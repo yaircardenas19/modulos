@@ -22,6 +22,12 @@
   function dec(n, d) {
     return Number(n).toFixed(d === undefined ? 2 : d).replace(".", ",");
   }
+  /* Como dec, pero sin ceros de relleno al final: 64,0000 → 64 */
+  function limpio(n, d) {
+    var s = dec(n, d === undefined ? 4 : d);
+    if (s.indexOf(",") < 0) return s;
+    return s.replace(/0+$/, "").replace(/,$/, "");
+  }
   function mcd(a, b) { while (b) { var t = b; b = a % b; a = t; } return a; }
   function mcm(a, b) { return a * b / mcd(a, b); }
   function factorizar(n) {
@@ -320,6 +326,167 @@
         "</b>». ¿Cuánto paga en total, cuánto son intereses y le parece que el aviso puede decir «sin intereses»?",
         s: "Paga " + pesos(pago * cu) + " en total, de los cuales " + pesos(pago * cu - c) +
            " son intereses (un " + dec((pago * cu - c) * 100 / c, 1) + " % sobre el precio). El aviso no podría decir «sin intereses»." };
+    }
+  ];
+
+  /* ═══════════ CAPÍTULO 6 · Álgebra y ecuaciones ═══════════ */
+  G.c06 = [
+    function () {
+      var m = ale(2, 9), b = ale(3, 20), x = ale(2, 12);
+      return { niv: "N1", e: "Evalúa la expresión <b>" + m + "x + " + b + "</b> para <b>x = " + x + "</b>.",
+        s: (m * x + b) + ". Primero se multiplica y después se suma: " + m + " × " + x + " = " + (m * x) + ", más " + b + "." };
+    },
+    function () {
+      var a = ale(2, 9), x = ale(2, 15), b = ale(3, 25);
+      return { niv: "N1", e: "Resuelve y verifica reemplazando: <b>" + a + "x − " + b + " = " + (a * x - b) + "</b>.",
+        s: "x = " + x + ". Suma " + b + " a los dos lados: " + a + "x = " + (a * x) + ". Divide entre " + a + ". Verifica: " +
+           a + "(" + x + ") − " + b + " = " + (a * x - b) + " ✓" };
+    },
+    function () {
+      var x = ale(2, 12), a = ale(4, 9), c = ale(1, 3), b = ale(2, 20);
+      var d = b + (a - c) * x;
+      return { niv: "N2", e: "Resuelve: <b>" + a + "x + " + b + " = " + c + "x + " + d + "</b>.",
+        s: "x = " + x + ". Junta las letras de un lado: " + (a - c) + "x = " + (d - b) + ". Después divide. Verifica reemplazando en los dos lados." };
+    },
+    function () {
+      var fijo = ale(2, 9) * 10000, tarifa = ale(2, 9) * 500, n = ale(3, 12);
+      var cosa = elegir([["gimnasio", "de matrícula", "mensuales", "meses"],
+                         ["taller", "de diagnóstico", "por hora", "horas"],
+                         ["plan de datos", "de cargo fijo", "por giga", "gigas"]]);
+      return { niv: "N2", e: "Un " + cosa[0] + " cobra <b>" + pesos(fijo) + "</b> " + cosa[1] + " y <b>" + pesos(tarifa) +
+        "</b> " + cosa[2] + ". Escribe la fórmula del total y calcula lo que se paga por <b>" + n + " " + cosa[3] + "</b>.",
+        s: "Fórmula: total = " + pesos(fijo) + " + " + pesos(tarifa) + " × n. Para n = " + n + ": " + pesos(fijo + tarifa * n) +
+           ". Comprueba en n = 0: debe dar " + pesos(fijo) + ", no cero." };
+    },
+    function () {
+      var v2 = elegir([600, 800]), v1 = v2 + elegir([200, 400]), k = ale(3, 8);
+      var f1 = ale(2, 5) * 1000, f2 = f1 + (v1 - v2) * k;
+      return { niv: "N3", e: "Una app paga <b>" + pesos(f1) + " + " + pesos(v1) + " por km</b> y otra paga <b>" + pesos(f2) +
+        " + " + pesos(v2) + " por km</b>. ¿A partir de cuántos kilómetros conviene la segunda?",
+        s: "Se igualan y da k = " + k + " km. A partir de <b>más de " + k + " km</b> conviene la segunda: compruébalo con " +
+           (k + 2) + " km, donde la primera paga " + pesos(f1 + v1 * (k + 2)) + " y la segunda " + pesos(f2 + v2 * (k + 2)) + "." };
+    },
+    function () {
+      var fijo = ale(3, 8) * 5000, tarifa = ale(3, 9) * 500, n = ale(4, 14);
+      return { niv: "N2", e: "Un servicio cobra <b>" + pesos(fijo) + "</b> fijos más <b>" + pesos(tarifa) +
+        "</b> por hora. Si la factura fue de <b>" + pesos(fijo + tarifa * n) + "</b>, ¿cuántas horas se usaron?",
+        s: n + " horas. Resta el fijo: " + pesos(tarifa * n) + ", y divide entre " + pesos(tarifa) + "." };
+    },
+    function () {
+      var k = ale(3, 9), cosas = elegir([["estudiantes", "profesores"], ["pasajeros", "buses"], ["operarios", "supervisores"]]);
+      return { niv: "N2", e: "«En un lugar hay <b>" + k + " veces más " + cosas[0] + " que " + cosas[1] +
+        "</b>.» Escribe la relación con letras, llamando <span class='mat'>A</span> a los " + cosas[0] + " y <span class='mat'>B</span> a los " + cosas[1] + ".",
+        s: "A = " + k + "B. Pruébalo con números: si hay 3 " + cosas[1] + ", hay " + (3 * k) + " " + cosas[0] +
+           ", y " + (3 * k) + " = " + k + " × 3 ✓. La trampa es escribir " + k + "A = B, que es al revés." };
+    }
+  ];
+
+  /* ═══════════ CAPÍTULO 7 · Funciones y gráficas ═══════════ */
+  G.c07 = [
+    function () {
+      var m = ale(2, 7), b = ale(2, 15), x = ale(-3, 8);
+      return { niv: "N1", e: "Para la función <b>f(x) = " + m + "x + " + b + "</b>, calcula <b>f(" + x + ")</b>.",
+        s: (m * x + b) + ". Reemplaza y opera: " + m + "(" + x + ") + " + b + "." };
+    },
+    function () {
+      var ini = elegir([20, 25, 30, 40]), ritmo = elegir([2, 2.5, 4, 5]);
+      var cosa = elegir([["una vela", "cm", "se consume", "cm por hora", "horas"],
+                         ["un saldo prepago", "mil pesos", "se descuenta", "mil pesos por minuto", "minutos"]]);
+      return { niv: "N2", e: cosa[0].charAt(0).toUpperCase() + cosa[0].slice(1) + " de <b>" + ini + " " + cosa[1] +
+        "</b> " + cosa[2] + " a razón de <b>" + dec(ritmo, 1).replace(/,0$/, "") + " " + cosa[3] +
+        "</b>. Escribe la fórmula y da su <b>dominio y rango en contexto</b>.",
+        s: "y = " + ini + " − " + dec(ritmo, 1).replace(/,0$/, "") + "t. Se agota en t = " + dec(ini / ritmo, 1).replace(/,0$/, "") +
+           " " + cosa[4] + ". Dominio: de 0 a " + dec(ini / ritmo, 1).replace(/,0$/, "") + ". Rango: de 0 a " + ini +
+           ". Ni tiempo negativo ni cantidad negativa." };
+    },
+    function () {
+      var x1 = 0, y1 = ale(2, 9) * 500, x2 = ale(4, 12), sube = ale(2, 9) * 100;
+      return { niv: "N2", e: "Un segmento de recta va del punto <b>(0 ; " + y1 + ")</b> al punto <b>(" + x2 + " ; " +
+        (y1 + sube * x2) + ")</b>. Halla su fórmula y di cuánto sube por cada unidad.",
+        s: "y = " + y1 + " + " + sube + "x. Sube " + sube + " por unidad: (" + (y1 + sube * x2) + " − " + y1 + ") ÷ " + x2 + "." };
+    },
+    function () {
+      var figs = mezclar([["una recta inclinada", "SÍ"], ["una circunferencia", "NO"],
+                          ["una parábola abierta hacia arriba", "SÍ"], ["una recta vertical", "NO"]]);
+      return { niv: "N1", e: "Aplica la <b>prueba de la recta vertical</b> y di cuáles de estas gráficas representan funciones: " +
+        figs.map(function (f) { return f[0]; }).join(" · ") + ".",
+        s: figs.map(function (f) { return f[0] + " → " + f[1]; }).join(" · ") +
+           ". Si una vertical la corta en dos o más puntos, una entrada tendría dos salidas y no es función." };
+    },
+    function () {
+      var t1 = ale(10, 25), t2 = ale(30, 50), km = ale(8, 20);
+      return { niv: "N3", e: "En una gráfica de <b>kilómetros acumulados contra el tiempo</b>, un recorrido sube hasta <b>" + km +
+        " km</b> en los primeros <b>" + t1 + " minutos</b>, se queda plano <b>" + (t2 - t1) +
+        " minutos</b> y después vuelve a subir. Describe qué pasó en cada tramo y di en cuál fue más rápido.",
+        s: "En el primer tramo se movió (subió " + km + " km). En el tramo plano <b>estuvo detenido</b>: los kilómetros acumulados no cambian. " +
+           "El tramo más rápido es el más inclinado, no el más largo. Un tramo plano nunca significa «terreno plano»." };
+    },
+    function () {
+      var cap = elegir([300, 400, 500, 600]), r = elegir([20, 25, 50]);
+      return { niv: "N2", e: "Un tanque vacío de <b>" + cap + " litros</b> se llena a <b>" + r +
+        " litros por minuto</b>. Escribe la fórmula, su dominio y su rango, y di cuánta agua hay a los <b>" + Math.round(cap / r / 2) + " minutos</b>.",
+        s: "a = " + r + "t. Se llena en " + (cap / r) + " minutos. Dominio: de 0 a " + (cap / r) + " min. Rango: de 0 a " + cap +
+           " L. A los " + Math.round(cap / r / 2) + " min hay " + (r * Math.round(cap / r / 2)) + " L." };
+    }
+  ];
+
+  /* ═══════════ CAPÍTULO 8 · Tipos de crecimiento ═══════════ */
+  G.c08 = [
+    function () {
+      var tipo = elegir(["lineal", "cuadratica", "exponencial"]);
+      var vals = [], f = "", pista = "";
+      if (tipo === "lineal") {
+        var b = ale(2, 12), m = ale(3, 9);
+        for (var i = 0; i < 5; i++) vals.push(b + m * i);
+        f = "y = " + m + "x + " + b; pista = "Las primeras diferencias son constantes (" + m + "): es <b>lineal</b>.";
+      } else if (tipo === "cuadratica") {
+        var a = ale(1, 4);
+        for (var j = 0; j < 5; j++) vals.push(a * j * j);
+        f = "y = " + a + "x²"; pista = "Las primeras diferencias no son constantes, pero las <b>segundas</b> sí (" + (2 * a) + "): es <b>cuadrática</b>.";
+      } else {
+        var a0 = ale(2, 6), r = elegir([2, 3]);
+        for (var k = 0; k < 5; k++) vals.push(a0 * Math.pow(r, k));
+        f = "y = " + a0 + " · " + r + "^x"; pista = "Las razones son constantes (" + r + "): es <b>exponencial</b>.";
+      }
+      return { niv: "N2", e: "Identifica el tipo de crecimiento y escribe la fórmula. Para <b>x = 0, 1, 2, 3, 4</b> los valores son: <b>" +
+        vals.join(" · ") + "</b>",
+        s: pista + " La fórmula es <b>" + f + "</b>. Verifícala en x = 3, que debe dar " + vals[3] + "." };
+    },
+    function () {
+      var l = ale(2, 9), k = elegir([2, 3, 4]);
+      return { niv: "N2", e: "Un salón cuadrado tiene <b>" + l + " m</b> de lado y se amplía a <b>" + (l * k) +
+        " m</b> de lado. ¿Por cuánto se multiplica su área?",
+        s: "Por " + (k * k) + ". El área pasa de " + (l * l) + " m² a " + (l * k * l * k) + " m². Si el lado se multiplica por " +
+           k + ", el área se multiplica por " + k + "² = " + (k * k) + ". Duplicar el lado NO duplica el área." };
+    },
+    function () {
+      var ini = elegir([3, 4, 5, 8]), r = elegir([2, 3]), h = ale(3, 7);
+      return { niv: "N1", e: "Una cadena de mensajes empieza con <b>" + ini + " personas</b> y cada hora se <b>multiplica por " + r +
+        "</b>. ¿Cuántas personas hay a las <b>" + h + " horas</b>?",
+        s: (ini * Math.pow(r, h)) + " personas. Es " + ini + " × " + r + "^" + h + ". Ojo: no es " + ini + " × " + r + " × " + h + "." };
+    },
+    function () {
+      var dia = ale(8, 20), fijo = elegir([50000, 80000, 100000]);
+      var expo = Math.pow(2, dia - 1);
+      return { niv: "N3", e: "La opción A paga <b>" + pesos(fijo) + " diarios</b>. La opción B paga <b>$1 el primer día</b> y <b>duplica</b> cada día. " +
+        "¿Cuál paga más <b>el día " + dia + "</b>?",
+        s: (expo > fijo ? "La opción B" : "La opción A") + ". El día " + dia + " la B paga " + pesos(expo) +
+           " y la A paga " + pesos(fijo) + ". Ojo: los primeros días la A gana con mucha ventaja, y aun así la B termina arriba si el contrato es largo." };
+    },
+    function () {
+      var a = ale(2, 8), r = elegir([1.5, 2, 3]), x = ale(3, 6);
+      return { niv: "N1", e: "Evalúa <b>y = " + a + " · " + limpio(r, 1) + "<sup>x</sup></b> para <b>x = " + x + "</b>.",
+        s: limpio(a * Math.pow(r, x), 2) + ". Se eleva primero y se multiplica después: " +
+           limpio(r, 1) + " elevado a " + x + " es " + limpio(Math.pow(r, x)) + ", y eso por " + a + "." };
+    },
+    function () {
+      var pob = elegir([30, 40, 45]), ini = elegir([2, 3, 4]);
+      var h = Math.ceil(Math.log(pob / ini) / Math.log(2));
+      return { niv: "N3", e: "Un rumor arranca con <b>" + ini + " personas</b> en un salón de <b>" + pob +
+        " estudiantes</b> y cada hora se duplica. ¿En cuántas horas lo sabe todo el salón, y a partir de cuándo deja de valer el modelo?",
+        s: "En " + h + " horas la fórmula pasa de " + pob + " (da " + (ini * Math.pow(2, h)) +
+           "). Pero el modelo <b>deja de valer ahí</b>: no puede haber más personas enteradas que estudiantes en el salón. " +
+           "La gráfica real se aplana en " + pob + ", no sigue subiendo." };
     }
   ];
 
