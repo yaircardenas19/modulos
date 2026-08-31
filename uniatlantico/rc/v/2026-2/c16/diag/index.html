@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 16</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><b>Inicio</b><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/rc/">Razonamiento Cuantitativo</a><span>›</span><a href="../../../../../../uniatlantico/rc/c16/">Cap. 16</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Cuando la gráfica miente</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Respóndelo <b>antes</b> de tu clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Razonamiento Cuantitativo · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"mc","p":"«Los casos subieron un <b>200 %</b>». Si antes había <b>3</b>, ahora hay:","ops":["6","9","200","No se puede saber"],"correcta":1,"fb":{"0":"Quedar en 6 sería subir <b>100 %</b>: agregarle a 3 otro tanto igual.","1":"Bien: subir 200 % es agregar el doble de lo que había. 3 + 6 = 9.","2":"El 200 no es la cantidad, es cuánto creció respecto de lo que había.","3":"Sí se puede: «subió un X %» siempre se calcula sobre el valor inicial, que aquí es 3."}},{"tipo":"mc","p":"Un estudio muestra que <b>a más helados vendidos, más ahogamientos</b>. La conclusión correcta es:","ops":["El helado causa ahogamientos","Hay una tercera variable que explica las dos","Los datos están mal tomados","Los ahogamientos causan el consumo de helado"],"correcta":1,"fb":{"0":"Que dos cosas suban juntas nunca alcanza para afirmar que una causa la otra.","1":"Bien: es el calor. Cuando hace calor la gente compra más helado <b>y</b> se mete más al agua.","2":"Los datos pueden estar perfectos. El problema no es la medición sino la interpretación.","3":"Invertir la dirección tampoco arregla nada: sigue siendo causalidad sin prueba."}},{"tipo":"num","p":"Un precio pasa de <b>$2.000</b> a <b>$2.500</b>. ¿Qué <b>porcentaje</b> subió?","resp":25,"unidad":"%","fbOk":"Correcto: 500 sobre 2.000.","fbMal":" El aumento es 500, y se divide entre lo que había: 500 ÷ 2.000 = 0,25 = 25 %. Si respondiste 500 diste el aumento en pesos; si respondiste 20, dividiste entre el valor final."},{"tipo":"mc","p":"«<b>9 de cada 10 odontólogos</b> lo recomiendan». Lo primero que hay que preguntar es:","ops":["Cuál es la marca","A cuántos preguntaron y quién pagó el estudio","Si son colombianos","Nada: es un dato"],"correcta":1,"fb":{"0":"La marca no cambia si la cifra es confiable o no.","1":"Bien: el <b>n</b> y quién financió. Si solo se preguntó a diez y los escogió la empresa, la cifra no dice nada.","2":"Puede importar para el contexto, pero no es lo primero ni lo decisivo.","3":"Un dato sin fuente, sin fecha y sin n no es un dato: es una afirmación."}},{"tipo":"num","p":"Una encuesta da <b>62 %</b> a favor, con un margen de error de <b>3 puntos</b>. El valor real está entre 59 % y ¿cuánto?","resp":65,"unidad":"%","fbOk":"Correcto: el margen se resta y se suma.","fbMal":" 62 + 3 = 65 %. El margen va para los dos lados: el valor real está entre 59 % y 65 %. Por eso dos candidatos con 47 % y 44 % y margen de 4 puntos pueden estar empatados."}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

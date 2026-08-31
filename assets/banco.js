@@ -908,6 +908,88 @@
     }
   ];
 
+  /* ═══════════ CAPÍTULO 16 · Lectura crítica de cifras ═══════════ */
+
+  G.c16 = [
+    function () {
+      var a = elegir([1200, 1600, 2400, 3200, 4500, 8000]);
+      var pct = elegir([10, 15, 20, 25, 30]);
+      var b = Math.round(a * (1 + pct / 100));
+      return { niv: "N1", e: "Un precio pasa de <b>" + pesos(a) + "</b> a <b>" + pesos(b) +
+        "</b>. ¿Qué <b>porcentaje</b> subió? Y si después volviera de " + pesos(b) + " a " + pesos(a) +
+        ", ¿qué porcentaje habría bajado? <b>No es el mismo número.</b>",
+        s: "Subió " + pct + " % (" + pesos(b - a) + " ÷ " + pesos(a) + ") y bajaría " +
+           limpio((b - a) * 100 / b, 2) + " % (" + pesos(b - a) + " ÷ " + pesos(b) + "). " +
+           "El aumento es el mismo en pesos, pero el porcentaje cambia porque <b>la base cambia</b>: la subida se calcula sobre " +
+           pesos(a) + " y la bajada sobre " + pesos(b) + ". Por eso subir y bajar el mismo porcentaje nunca deja las cosas como estaban." };
+    },
+    function () {
+      var a = elegir([6, 8, 10, 12, 16, 19]), d = elegir([1, 2, 3]);
+      var b = a + d;
+      var q = elegir(["el desempleo", "la tasa de deserción", "el IVA", "la inflación anual"]);
+      return { niv: "N1", e: "<b>" + q.charAt(0).toUpperCase() + q.slice(1) + "</b> pasa del <b>" + a + " %</b> al <b>" + b +
+        " %</b>. Exprésalo en <b>puntos porcentuales</b> y en <b>variación porcentual</b>. ¿Cuál usaría quien quiere alarmar y cuál quien quiere calmar?",
+        s: "Subió <b>" + d + " punto" + (d > 1 ? "s" : "") + " porcentual" + (d > 1 ? "es" : "") + "</b> (la resta: " + b + " − " + a +
+           ") y <b>un " + limpio(d * 100 / a, 1) + " %</b> (la variación: " + d + " ÷ " + a + "). " +
+           "Las dos son verdaderas y describen el mismo cambio. Quien quiere alarmar dice «" + limpio(d * 100 / a, 1) +
+           " %»; quien quiere calmar dice «" + d + " punto" + (d > 1 ? "s" : "") + "». La cifra honesta trae las dos." };
+    },
+    function () {
+      var a = elegir([4, 5, 8, 12, 20, 40]);
+      var pct = elegir([50, 100, 150, 200, 300]);
+      var b = Math.round(a * (1 + pct / 100));
+      return { niv: "N1", e: "Un titular dice que algo <b>subió un " + pct + " %</b>. Si antes había <b>" + a +
+        "</b>, ¿cuánto hay ahora? Y di además en cuánto habría quedado si el titular dijera que quedó <b>al " + pct + " %</b> de lo que había.",
+        s: "<b>" + b + "</b>. Subir " + pct + " % es agregarle a " + a + " el " + pct + " % de " + a + ", que son " + (b - a) +
+           ": " + a + " + " + (b - a) + " = " + b + ". En cambio «quedó al " + pct + " % de lo que había» sería " +
+           limpio(a * pct / 100, 2) + ", que es otra cosa. <b>Traduce siempre a números absolutos antes de reaccionar</b>: «" +
+           pct + " %» suena distinto a «" + (b - a) + " casos más»." };
+    },
+    function () {
+      var a1 = ale(2, 5), b1 = a1 * elegir([3, 4, 5]);
+      var a2 = elegir([1500, 2000, 2500, 3000]), b2 = Math.round(a2 * 1.2);
+      return { niv: "N2", e: "En el barrio <b>A</b> los hurtos denunciados pasaron de <b>" + a1 + "</b> a <b>" + b1 +
+        "</b>. En el barrio <b>B</b> pasaron de <b>" + mil(a2) + "</b> a <b>" + mil(b2) +
+        "</b>. Un titular dice que A es el más inseguro «por su aumento porcentual». Calcula los dos aumentos en porcentaje y en casos, y decide en cuál preferirías vivir.",
+        s: "A subió " + limpio((b1 - a1) * 100 / a1, 0) + " % y B subió " + limpio((b2 - a2) * 100 / a2, 0) +
+           " %. Pero en casos: A sumó <b>" + (b1 - a1) + "</b> hurtos y B sumó <b>" + mil(b2 - a2) + "</b>. " +
+           "El porcentaje de A se dispara porque la <b>base es diminuta</b>: sobre " + a1 +
+           " casos, cualquier cambio produce un porcentaje enorme. <b>Ningún porcentaje se cree sin conocer la base.</b> " +
+           "Si el titular da el porcentaje y esconde los absolutos, casi siempre es porque los absolutos no impresionan." };
+    },
+    function () {
+      var t = elegir([60, 70, 80, 90, 4]);
+      var paso = t === 4 ? 0.2 : ale(3, 6);
+      var a = t + paso, b = a + (t === 4 ? 0.2 : ale(5, 12));
+      var apar = (b - t) / (a - t), real = (b - a) * 100 / a;
+      return { niv: "N2", e: "Un gráfico publicado tiene el eje vertical <b>de " + limpio(t, 1) + " a " + limpio(b + (t === 4 ? 0.1 : 2), 1) +
+        "</b> y dos barras que valen <b>" + limpio(a, 1) + "</b> y <b>" + limpio(b, 1) +
+        "</b>. El titular dice que la segunda «casi duplica» a la primera. ¿Cuántas veces más alta se <b>ve</b>? ¿Cuánto la supera <b>de verdad</b>? ¿El titular se sostiene?",
+        s: "Se ve <b>" + limpio(apar, 2) + " veces</b> más alta, porque el eje truncado deja visibles solo " + limpio(a - t, 1) +
+           " y " + limpio(b - t, 1) + " unidades. De verdad la supera en <b>" + limpio(real, 1) +
+           " %</b>. El titular <b>no se sostiene</b>: «casi duplica» describe un aumento cercano al 100 %. " +
+           "El número no miente, miente el eje. Truncar el eje no es pecado si está declarado; el problema es truncarlo en silencio." };
+    },
+    function () {
+      var casos = elegir([
+        ["los municipios con más bibliotecas tienen menos delitos", "el tamaño y el ingreso del municipio: los municipios más prósperos construyen bibliotecas y además tienen menos delito"],
+        ["los estudiantes que desayunan sacan mejores notas", "el ingreso y la estabilidad del hogar: una casa que desayuna a diario suele tener también horarios fijos y menos privaciones"],
+        ["los barrios con más árboles tienen menos enfermedades respiratorias", "el estrato: los barrios con más árboles suelen estar lejos de las vías industriales y tener mejor acceso a salud"],
+        ["las personas que usan reloj inteligente viven más años", "el ingreso y el acceso a atención médica de quien puede comprar uno"],
+        ["los colegios con más computadores tienen mejores resultados en Saber 11", "el presupuesto del colegio, que compra computadores y también contrata mejores docentes"]
+      ]);
+      return { niv: "N3", e: "Un estudio serio y bien medido encuentra que <b>" + casos[0] +
+        "</b>. Un titular concluye que lo primero <b>causa</b> lo segundo. Aplica el protocolo: separa el dato de la conclusión, " +
+        "propón <b>dos terceras variables</b> distintas que expliquen el resultado sin que haya causa, di qué pasaría si se aplicara la política que sugiere el titular, " +
+        "y reescribe el titular sin cambiar ningún número.",
+        s: "El dato (la relación) es correcto; la conclusión (la causa) no está probada. Una tercera variable posible: <b>" + casos[1] +
+           "</b>. Se pide una segunda distinta, y casi siempre aparece pensando en quién decide y quién paga. " +
+           "Si se aplicara la política tal cual, se estaría gastando en el <b>síntoma</b> y no en la causa. " +
+           "Prueba rápida: pregúntate qué pasaría si <b>eliminaras</b> la supuesta causa; si la respuesta es «nada», no era la causa. " +
+           "Titular honesto: cambiar «causa», «mejora» o «gracias a» por «<b>se relaciona con</b>» o «<b>coincide con</b>», y agregar que el estudio no permite afirmar la dirección." };
+    }
+  ];
+
   /* ── API ── */
   RC.banco = function (cap, n) {
     var gens = G[cap];
