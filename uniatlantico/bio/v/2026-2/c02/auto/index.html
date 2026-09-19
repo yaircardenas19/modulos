@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Autoevaluación · Capítulo 2</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--verde)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c02/">Cap. 2</a><span>›</span><b>Autoevaluación</b></nav>
+<header class="cab">
+  <p class="tipo">◎ Autoevaluación</p>
+  <h1>De la planilla a la tabla y al gráfico</h1>
+  <p class="bajada">Qué puedes hacer ya, y qué te falta</p>
+</header>
+
+<div class="caja" style="--acento:var(--verde)">
+  <p style="margin:0">Es la tabla del <b>bloque 12</b> de tu libro. Sé honesto: <b>esto no lo ve nadie más que tú</b> y se guarda en este teléfono. Lo que marques como «todavía no» es lo que hay que preguntar la próxima clase, no una nota.</p>
+</div>
+
+<div id="auto"></div>
+
+<div class="acciones"><button class="bt" id="btRuta" type="button">Ver mi ruta de estudio</button></div>
+<div id="ruta"></div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>
+(function(){
+  var CAP="c02";
+  var FR=["Armo una tabla de frecuencias con sus cuatro columnas y compruebo que suman.","Decido cuántas clases hacer y justifico la decisión.","Elijo el gráfico según el tipo de variable y sé decir por qué los otros no sirven.","Leo una ojiva en los dos sentidos: por el eje de abajo y por el de al lado.","Detecto un gráfico con el eje cortado y sé explicar por qué engaña."];
+  var OPS=[['si','Sí'],['masomenos','Más o menos'],['no','Todavía no']];
+  var CLAVE='bio-auto-'+CAP;
+  var est={};
+  try{ est=JSON.parse(localStorage.getItem(CLAVE)||'{}'); }catch(e){ est={}; }
+
+  document.getElementById('auto').innerHTML=FR.map(function(f,i){
+    return '<div class="item"><p class="item-p">'+f+'</p><div class="ops">'+
+      OPS.map(function(o,j){
+        var m = est[i]===o[0] ? ' checked' : '';
+        return '<label class="op"><input type="radio" name="a'+i+'" value="'+o[0]+'"'+m+'>'+
+               '<span class="let">'+(j+1)+'</span><span>'+o[1]+'</span></label>';
+      }).join('')+'</div></div>';
+  }).join('');
+
+  document.getElementById('auto').addEventListener('change',function(ev){
+    var n=ev.target.name; if(!n) return;
+    est[n.slice(1)]=ev.target.value;
+    try{ localStorage.setItem(CLAVE,JSON.stringify(est)); }catch(e){}
+  });
+
+  document.getElementById('btRuta').addEventListener('click',function(){
+    var faltan=[], medio=[], sin=0;
+    FR.forEach(function(f,i){
+      if(est[i]==='no') faltan.push(f); else if(est[i]==='masomenos') medio.push(f); else if(!est[i]) sin++;
+    });
+    var h='';
+    if(sin===FR.length){
+      h='<div class="caja"><p style="margin:0">Marca primero cada fila: sí, más o menos, o todavía no.</p></div>';
+    } else if(!faltan.length && !medio.length){
+      h='<div class="caja" style="--acento:var(--verde)"><p style="margin:0"><b>Marcaste todo en «sí».</b> Compruébalo en el banco de ejercicios. Si salen, vas bien de verdad.</p></div>';
+    } else {
+      h='<div class="caja" style="--acento:var(--rojo)"><p class="caja-tit">Tu ruta de estudio</p>';
+      if(faltan.length) h+='<p><b>Empieza por aquí:</b></p><ul><li>'+faltan.join('</li><li>')+'</li></ul>';
+      if(medio.length) h+='<p><b>Después refuerza:</b></p><ul><li>'+medio.join('</li><li>')+'</li></ul>';
+      h+='<p style="margin-bottom:0">Lleva esta lista a la próxima clase. Es más útil que decir «no entendí nada».</p></div>';
+    }
+    document.getElementById('ruta').innerHTML=h;
+    document.getElementById('ruta').scrollIntoView({block:'nearest'});
+  });
+})();
+</script>
+</body></html>

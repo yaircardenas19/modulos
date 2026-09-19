@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 1</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c01/">Cap. 1</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Qué se mide y cómo se mide</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"mc","p":"¿Tiene sentido decir que el promedio de las cédulas de los operarios es <b>1 043 605 712</b>?","ops":["Sí, siempre que se sumen todas las cédulas sin error.","No: la cédula es una etiqueta escrita con dígitos, no una cantidad. Sumarlas y dividirlas no produce nada que exista.","Sí, porque la cédula es un número.","No, porque las cédulas son números demasiado grandes para promediar."],"correcta":1,"fb":{"0":"La cuenta puede estar bien hecha y el resultado seguir sin significar nada. Es el <b>error 2 del bloque 9</b>: tratar un código como si fuera una cantidad.","1":"Exacto. Un número puede ser una etiqueta.","2":"Estar escrita con dígitos no la vuelve cantidad. Es el <b>error 2 del bloque 9</b>.","3":"El tamaño no es el problema: el problema es que la cédula no mide nada."}},{"tipo":"mc","p":"Un estanque tiene <b>8 000</b> peces. Se pesan <b>40</b>. ¿Cuál es la población y cuál la muestra?","ops":["Población: el peso promedio de los 8 000. Muestra: el peso promedio de los 40.","Población: los 40 peces pesados. Muestra: los 8 000 del estanque.","Población: los 8 000 peces del estanque. Muestra: los 40 pesados.","Población: todos los peces de la finca. Muestra: los 8 000 del estanque."],"correcta":2,"fb":{"0":"Esos son el parámetro y el estadístico: números que describen a la población y a la muestra. La población y la muestra son <b>los peces</b>. Confundirlos es el <b>error 4 del bloque 9</b>.","1":"Al revés: la población es todo lo que interesa; la muestra, la parte que se mide.","2":"Exacto.","3":"La pregunta es sobre este estanque: la población son sus 8 000 peces."}},{"tipo":"mc","p":"La temperatura del agua pasó de <b>28 °C a 30 °C</b>. ¿Qué se puede afirmar?","ops":["Que aumentó 2 grados, y que está un 7 % más caliente.","Que aumentó 2 grados, pero no que está «un 7 % más caliente»: en Celsius el cero no significa ausencia de calor, así que las razones no tienen sentido.","Ninguna de las dos cosas: las temperaturas no se pueden comparar.","Solo que está un 7 % más caliente."],"correcta":1,"fb":{"0":"Lo primero sí; lo segundo no. Es el <b>error 3 del bloque 9</b>: usar razones en una escala de intervalo. 30 °C tampoco es «el doble de caliente» que 15 °C.","1":"Exacto. En una escala de intervalo las diferencias tienen sentido y las razones no.","2":"Las diferencias sí tienen sentido: 30 − 28 = 2 grados. Lo que no tiene sentido son las razones.","3":"Al revés: la diferencia sí se puede afirmar; el porcentaje no."}},{"tipo":"mc","p":"El técnico clasifica cada pez como <b>bueno, malo, excelente</b> o <b>regular</b>. ¿Cómo se ordenan, y la distancia entre «malo» y «regular» es la misma que entre «bueno» y «excelente»?","ops":["Malo &lt; regular &lt; bueno &lt; excelente, y sí: los saltos son iguales.","No se pueden ordenar: son palabras.","Regular &lt; malo &lt; bueno &lt; excelente, y los saltos son iguales.","Malo &lt; regular &lt; bueno &lt; excelente, y no se puede afirmar que los saltos sean iguales: se pueden ordenar, nada más."],"correcta":3,"fb":{"0":"El orden está bien, pero nadie puede afirmar que los saltos sean iguales. Por eso no se le saca promedio a esta escala: es el <b>error 1 del bloque 9</b>.","1":"Sí se pueden ordenar: es una escala ordinal. Una palabra puede tener orden.","2":"El orden es malo, regular, bueno, excelente. Y aunque el orden estuviera bien, los saltos no se pueden suponer iguales.","3":"Exacto. Es una escala ordinal."}},{"tipo":"mc","p":"El número de peces muertos en un día puede ser 3 o 4, pero nunca 3,5. El peso de un pez sí puede ser 385,4 g. ¿Cómo se llama esa diferencia?","ops":["El primero es discreto (se cuenta, va de salto en salto) y el segundo continuo (se mide, admite decimales).","El primero es cualitativo y el segundo cuantitativo.","El primero es ordinal y el segundo de razón.","El primero es continuo y el segundo discreto."],"correcta":0,"fb":{"0":"Exacto. Es la distinción del bloque 6.","1":"Los dos son cuantitativos: los dos son cantidades. La diferencia es que uno se cuenta y el otro se mide.","2":"Los dos son de razón: 0 muertos y 0 gramos significan «nada». La diferencia está en si se cuenta o se mide.","3":"Al revés. Lo que se cuenta va de salto en salto; lo que se mide admite decimales. Confundirlo es el <b>error 5 del bloque 9</b>."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

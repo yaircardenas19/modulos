@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 0</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c00/">Cap. 0</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Cómo se pregunta con datos</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"mc","p":"«El agua del estanque 4 está más verde y ahí se están muriendo los peces. <b>Entonces el agua verde los está matando.</b>» ¿Es una conclusión válida?","ops":["Sí: el agua verde y la mortalidad aparecen en el mismo estanque.","No: que aparezcan juntas no dice cuál causó a cuál, ni si hay una tercera causa detrás.","Sí, siempre que el agua esté verde todos los días.","No, porque el color del agua no se puede medir."],"correcta":1,"fb":{"0":"Aparecer juntas no dice cuál causó a cuál. Es el <b>error 1 del bloque 9</b>.","1":"Exacto. El agua verde y la mortalidad podrían ser las dos consecuencia de algo más —por ejemplo, exceso de alimento sin comer.","2":"Aunque pase todos los días, seguirían apareciendo juntas sin que eso pruebe la causa. Podría haber una tercera cosa moviendo las dos.","3":"El color sí se puede medir, con el disco Secchi o con una escala. El problema no es medir: es concluir la causa porque aparecen juntas."}},{"tipo":"mc","p":"Para saber el peso promedio de un estanque de 8 000 peces, el operario saca <b>30 con la atarraya de la orilla</b>, donde el agua es baja. ¿Hay algún problema?","ops":["No: 30 peces alcanzan para sacar un promedio.","Sí: 30 son muy pocos; con 300 de la orilla quedaría bien.","Sí: los de la orilla no son como los del centro —suelen ser los más pequeños o débiles—, así que ese promedio no representa al estanque.","No, porque todos los peces se sembraron el mismo día."],"correcta":2,"fb":{"0":"El problema no es cuántos sino <b>cuáles</b>: los de la orilla no representan al estanque.","1":"Es el <b>error 2 del bloque 9</b>: muestrear más no arregla un muestreo mal hecho. Trescientos peces de la orilla siguen sin representar el centro.","2":"Exacto. Y por eso aumentar la muestra no lo arregla: hay que cambiar de dónde se saca.","3":"Sembrados el mismo día no crecen igual. Los de la orilla suelen ser los más pequeños o los más débiles."}},{"tipo":"mc","p":"Ayer se murieron <b>8</b> peces y hoy <b>3</b>. ¿Puedes concluir que la situación está mejorando?","ops":["No: dos días no son una tendencia. La mortalidad varía todos los días sin que nada cambie; hay que mirar varios días.","Sí: la mortalidad bajó a menos de la mitad.","Sí, si mañana vuelven a morir menos de 8.","No, porque 3 muertos sigue siendo un número alto."],"correcta":0,"fb":{"0":"Exacto. Para hablar de mejoría hay que comparar con cuánto varía normalmente, en varios días.","1":"Es el <b>error 3 del bloque 9</b>: leer una tendencia en dos datos.","2":"Un tercer día tampoco alcanza: la mortalidad sube y baja sola. Hay que compararla con su variación normal.","3":"Que 3 sea alto o bajo depende de cuánto varía normalmente. Y el problema de fondo es otro: dos días no son una tendencia."}},{"tipo":"mc","p":"El operario se queja: <b>«el alimento nuevo no sirve»</b>. ¿Cuál de estas preguntas convierte la queja en algo que se puede responder con datos?","ops":["¿El alimento nuevo es malo?","¿A los operarios les gusta el alimento nuevo?","¿Cuánto cuesta el bulto del alimento nuevo?","¿La conversión alimenticia con el alimento nuevo es distinta de la que teníamos con el anterior, en estanques con la misma densidad?"],"correcta":3,"fb":{"0":"Sigue siendo una opinión: no dice qué se mide ni con qué se compara.","1":"Se puede preguntar, pero no responde si el alimento hace lo que se le compra: que los peces crezcan.","2":"El precio es un dato, pero no dice si el alimento sirve. Hay que medir lo que el alimento debe producir.","3":"Esa sí: dice <b>qué se mide</b> (la conversión), <b>con qué se compara</b> (el alimento anterior) y <b>en qué condiciones</b> (misma densidad)."}},{"tipo":"mc","p":"Dos estanques tienen el mismo peso promedio, <b>380 g</b>. ¿Significa que los peces de los dos están igual de parejos?","ops":["Sí: si el promedio es igual, los estanques son iguales.","Sí, siempre que tengan el mismo número de peces.","No: uno puede tener todos los peces cerca de 380 g y el otro la mitad en 200 y la mitad en 560. Mismo promedio, lote distinto.","No se puede decir nada con el promedio."],"correcta":2,"fb":{"0":"El promedio no dice cómo se reparten los pesos alrededor de él.","1":"Ni con el mismo número de peces: el promedio no dice qué tan parejos están.","2":"Exacto. El segundo no se puede cosechar parejo, aunque el promedio sea igual.","3":"El promedio sí dice algo: dónde está el centro. Lo que no dice es qué tan parejos están. Para eso hace falta la dispersión del capítulo 3."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

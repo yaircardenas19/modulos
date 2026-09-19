@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 3</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c03/">Cap. 3</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>El centro, la dispersión y la forma</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"Ordena y di cuál queda justo en el medio: <b>412, 380, 395, 428, 401, 388, 405</b>.","resp":401,"unidad":"g","fbOk":"Ordenados: 380, 388, 395, <b>401</b>, 405, 412, 428. Con siete datos, el del medio es el cuarto.","fbMal":" Ordenados: 380, 388, 395, <b>401</b>, 405, 412, 428. Con siete datos, el del medio es el cuarto. Si respondiste 428, tomaste el cuarto de la lista sin ordenarla."},{"tipo":"mc","p":"Cinco peces pesan <b>300, 310, 320, 330 y 1 940 g</b>. ¿Qué describe mejor al grupo?","ops":["El promedio, 640 g, porque usa todos los datos.","El más grande, 1 940 g.","El del medio, 320 g: un solo pez enorme arrastró el promedio a 640, donde no hay ningún pez.","Ninguno: con un dato así no se puede resumir."],"correcta":2,"fb":{"0":"Usa todos, y por eso un solo pez enorme lo arrastra: no hay ningún pez cerca de 640. Es el <b>error 1 del bloque 9</b>.","1":"Un solo pez no describe a los cinco.","2":"Exacto. La mediana no se deja arrastrar por un valor extremo.","3":"Sí se puede: con la mediana, que no se deja arrastrar por el valor extremo."}},{"tipo":"num","p":"Un estanque de <b>100</b> peces promedia <b>380 g</b> y otro de <b>300</b> peces promedia <b>420 g</b>. ¿Cuál es el promedio de los 400 peces juntos?","resp":410,"unidad":"g","fbOk":"Ponderaste por el número de peces: (100·380 + 300·420)/400 = 410 g.","fbMal":" Hay que ponderar: (100·380 + 300·420)/400 = 410 g. Si respondiste 400, promediaste los dos promedios sin tener en cuenta que un estanque tiene el triple de peces. Es el <b>error 2 del bloque 9</b>."},{"tipo":"mc","p":"Si a todos los peces de un estanque les sumo <b>50 g</b>, ¿qué pasa?","ops":["El promedio sube 50 g y lo disparejo no cambia.","El promedio sube 50 g y también lo disparejo.","El promedio no cambia, porque se les sumó a todos por igual.","El promedio sube 50 g y lo disparejo baja."],"correcta":0,"fb":{"0":"Exacto. Todos se corrieron igual, así que las distancias entre ellos son las mismas.","1":"Lo disparejo mide distancias entre los peces, y esas no cambiaron: todos se movieron lo mismo.","2":"Si a todos se les suma 50, el centro también se corre 50.","3":"Las distancias entre los peces no cambiaron, así que lo disparejo tampoco."}},{"tipo":"mc","p":"Dos estanques tienen desviación estándar de <b>40 g</b>. Uno promedia <b>400 g</b> y el otro <b>120 g</b>. ¿Están igual de disparejos?","ops":["Sí: la desviación es la misma.","No: el de 400 g está más disparejo porque sus peces son más grandes.","No se puede saber sin los datos.","No: 40 g sobre 400 es el 10 %; 40 g sobre 120 es el 33 %. El segundo está mucho más disparejo."],"correcta":3,"fb":{"0":"Es el <b>error 5 del bloque 9</b>: comparar desviaciones de cosas de tamaño distinto.","1":"Al revés: 40 g pesan mucho más sobre peces de 120 g.","2":"Con la media y la desviación basta: su cociente es el coeficiente de variación.","3":"Exacto. Para comparar dispersión entre cosas de tamaño distinto se usa el coeficiente de variación, del bloque 6."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

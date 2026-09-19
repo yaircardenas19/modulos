@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 12</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c12/">Cap. 12</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Cuando lo que se cuenta son proporciones</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"De <b>850</b> alevinos sembrados sobrevivieron <b>731</b>. ¿Qué proporción es? <small>(Número entre 0 y 1.)</small>","resp":0.86,"respTexto":"0,86","tol":0.001,"fbOk":"731/850 = 0,860, o sea 86,0 %.","fbMal":" 731/850 = 0,86. Si escribiste 86, es el porcentaje; aquí se pide la proporción."},{"tipo":"mc","p":"Del capítulo 10: ¿con qué valor de p se hace máximo <b>p(1 − p)</b>, y cuánto vale ahí?","ops":["Con p = 1, y vale 1.","Con p = 0,5, y vale 0,25.","Con p = 0, y vale 0.","Con p = 0,25, y vale 0,5."],"correcta":1,"fb":{"0":"Con p = 1: 1 × 0 = 0. Es el mínimo, no el máximo.","1":"Exacto. Es el peor caso: el de máxima variabilidad.","2":"Con p = 0 el producto vale 0: el mínimo.","3":"Con p = 0,25: 0,25 × 0,75 = 0,1875. El máximo está en 0,5."}},{"tipo":"mc","p":"Dos proveedores: uno tiene <b>85 %</b> de sobrevivencia sobre <b>860</b> alevinos; el otro, <b>85 %</b> sobre <b>20</b>. ¿Confiarías igual en los dos porcentajes?","ops":["Sí: el porcentaje es el mismo.","Sí: 85 % es buen resultado en los dos casos.","No: el de 860 es menos confiable, porque hay más donde equivocarse.","No: el de 20 podría cambiar mucho con un solo pez más o menos. La confianza en una proporción depende de n."],"correcta":3,"fb":{"0":"El número es el mismo, pero no pesa igual: con 20 alevinos, un solo pez mueve el porcentaje 5 puntos.","1":"Que sea bueno no dice si es confiable. Con 20 alevinos, un pez de más o de menos cambia el resultado 5 puntos.","2":"Al revés: más datos, menos lugar para el azar.","3":"Exacto. Con 20 alevinos, un pez de más o de menos mueve el porcentaje 5 puntos."}},{"tipo":"mc","p":"La diferencia entre <b>86 %</b> y <b>82 %</b>, ¿es de «4 %» o de «4 puntos porcentuales»?","ops":["De 4 puntos porcentuales. No es lo mismo que «4 %»: un 4 % más sobre 82 sería 85,3.","De 4 %: es lo mismo decirlo de las dos formas.","Da igual cómo se diga: en un contrato se entiende.","De 4 % si se habla de sobrevivencia, y de 4 puntos si se habla de mortalidad."],"correcta":0,"fb":{"0":"Exacto. Y si alguien pregunta el cambio relativo, ese sí es 4/82 ≈ 4,9 %. Son dos preguntas distintas.","1":"No es lo mismo: es el <b>error 1 del bloque 9</b>, y en un contrato cuesta plata.","2":"No da igual: «4 % más» y «4 puntos más» son números distintos, y en un contrato la diferencia se paga.","3":"No depende de la variable: siempre que se restan dos porcentajes, el resultado está en puntos porcentuales."}},{"tipo":"num","p":"Cuatro puntos de sobrevivencia sobre <b>900</b> alevinos, ¿cuántos peces son?","resp":36,"unidad":"peces","fbOk":"0,04 × 900 = 36 peces. Ese es el número que le importa al dueño, no el 4 %.","fbMal":" 0,04 × 900 = 36 peces. Traducir los puntos a peces —y a plata— es lo que se hace antes de recomendar."}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

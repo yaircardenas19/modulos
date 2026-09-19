@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 4</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c04/">Cap. 4</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Lo que puede pasar</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"En un estanque de <b>500</b> peces, <b>75</b> están bajo talla. Sacas uno al azar. ¿Qué probabilidad hay de que esté bajo talla? <small>(Escríbela como número entre 0 y 1.)</small>","resp":0.15,"respTexto":"0,15","fbOk":"75/500 = 0,15, o sea 15 %.","fbMal":" 75/500 = 0,15: los casos favorables sobre los posibles. Si escribiste 15, es el porcentaje; aquí se pide como número entre 0 y 1."},{"tipo":"num","p":"Si la probabilidad de que un alevín venga infectado es <b>0,03</b>, ¿cuál es la probabilidad de que <b>no</b> venga infectado?","resp":0.97,"respTexto":"0,97","fbOk":"Complemento: 1 − 0,03 = 0,97. Lo que no es una cosa es la otra: las dos suman 1.","fbMal":" 1 − 0,03 = 0,97: las dos cosas suman 1. Si te dio 0,7, restaste 0,3 en vez de 0,03."},{"tipo":"mc","p":"Alguien dice que la probabilidad de que llueva mañana es <b>1,4</b>. ¿Puede ser?","ops":["Sí, si es casi seguro que llueva.","Sí: en los pronósticos de lluvia se usan valores mayores que 1.","No: ninguna probabilidad pasa de 1. Si un cálculo da más de 1, hay un error —casi siempre, sumar cosas que se solapan.","No, porque las probabilidades no pueden tener decimales."],"correcta":2,"fb":{"0":"Ni lo absolutamente seguro pasa de 1: lo seguro vale exactamente 1.","1":"No existe esa escala. La probabilidad siempre está entre 0 y 1.","2":"Exacto. Sumar eventos que se solapan es el <b>error 5 del bloque 9</b>, y es la causa más común.","3":"Sí pueden tener decimales: casi siempre los tienen. Lo que no pueden es pasar de 1 ni ser negativas."}},{"tipo":"mc","p":"El proveedor tiene un <b>3 %</b> de alevinos enfermos. Los últimos <b>cinco</b> que sacaste de la caja venían sanos. ¿Cambia la probabilidad de que el sexto venga enfermo?","ops":["No: si los alevinos se mezclaron bien, cada uno tiene la misma probabilidad que el primero. La caja no se acuerda de lo que ya sacaste.","Sí, aumenta: ya le toca a uno enfermo.","Sí, baja: los cinco sanos muestran que esta caja salió buena.","Sí, aumenta: la probabilidad tiene que compensar los cinco sanos."],"correcta":0,"fb":{"0":"Exacto.","1":"La caja no se acuerda de lo que salió. Es el <b>error 2 del bloque 9</b>.","2":"Cinco alevinos no alcanzan para cambiar lo que se sabe del proveedor. Con un 3 % de enfermos, sacar cinco sanos seguidos es lo más normal: pasa unas 86 de cada 100 veces.","3":"Nada obliga a compensar. Es el <b>error 2 del bloque 9</b>: creer que lo que ya salió cambia lo que va a salir."}},{"tipo":"mc","p":"De <b>200</b> peces: <b>140</b> están en talla y <b>162</b> están sanos. ¿Se pueden sumar esos dos números para saber cuántos están en talla <b>o</b> sanos?","ops":["Sí: 140 + 162 = 302 peces.","No: muchos peces están en los dos grupos a la vez y se contarían dos veces. Por eso la suma da 302 cuando solo hay 200.","Sí, pero dividiendo entre 2: 151 peces.","No: hay que multiplicarlos."],"correcta":1,"fb":{"0":"Solo hay 200 peces. Muchos están en los dos grupos y los estarías contando dos veces. Es el <b>error 5 del bloque 9</b>.","1":"Exacto. La regla de la suma del bloque 6 lo arregla restando la parte común.","2":"Dividir entre 2 no tiene justificación: hay que restar exactamente los que están en los dos grupos.","3":"Multiplicar tampoco sirve aquí. Se suman y se resta la parte común, la que se contó dos veces."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

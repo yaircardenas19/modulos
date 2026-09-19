@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 5</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c05/">Cap. 5</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Contar sin contar uno por uno</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"Hay <b>3</b> dietas y <b>2</b> densidades. ¿Cuántas combinaciones distintas de dieta y densidad se pueden armar?","resp":6,"fbOk":"Por cada dieta hay dos densidades: 3 × 2 = 6.","fbMal":" Por cada dieta hay dos densidades: 3 × 2 = 6. Si te dio 5, sumaste cuando había que multiplicar: es el <b>error 1 del bloque 9</b>."},{"tipo":"mc","p":"Vas a escoger <b>2 estanques de 4</b> para un ensayo. ¿Es lo mismo escoger «el 1 y el 3» que «el 3 y el 1»?","ops":["No: el orden en que se escogen cambia el grupo.","Depende de si hay reposición.","Solo si los dos estanques son iguales.","Sí: son los mismos dos estanques; el orden no importa. Eso será una combinación."],"correcta":3,"fb":{"0":"El grupo es el mismo: el 1 y el 3. Aquí el orden no importa. Confundirlo es el <b>error 2 del bloque 9</b>.","1":"La reposición es la otra pregunta. Esta es sobre el orden: ¿importa quién se escogió primero?","2":"No hace falta que sean iguales: basta con que el resultado sea el mismo par de estanques.","3":"Exacto."}},{"tipo":"mc","p":"Vas a nombrar un <b>primer</b> y un <b>segundo</b> lugar entre 4 estanques según su rendimiento. ¿Es lo mismo «1.º el A y 2.º el B» que «1.º el B y 2.º el A»?","ops":["Sí: son los mismos dos estanques.","No: quedar primero no es igual que quedar segundo; el orden importa. Eso será una permutación.","Sí, porque los dos quedaron entre los mejores.","Depende de cuántos estanques haya."],"correcta":1,"fb":{"0":"Mismos estanques, distinto resultado. Aquí el orden sí cambia las cosas: es el <b>error 2 del bloque 9</b>.","1":"Exacto.","2":"Estar entre los mejores es lo mismo en los dos casos, pero la pregunta es por los puestos: y ahí el orden importa.","3":"El número de estanques cambia cuántos casos hay, no si el orden importa."}},{"tipo":"num","p":"Sacas un alevín de una caja de <b>100</b>, lo miras y <b>lo devuelves</b>. Sacas otro. ¿Cuántos había disponibles en la segunda extracción?","resp":100,"unidad":"alevinos","fbOk":"Con reposición, cada extracción arranca igual que la primera.","fbMal":" Lo devolviste: con reposición la caja vuelve a tener 100."},{"tipo":"num","p":"Sacas un alevín de una caja de <b>100</b> y <b>no</b> lo devuelves. Sacas otro. ¿Cuántos había disponibles en la segunda extracción?","resp":99,"unidad":"alevinos","fbOk":"Sin reposición, el conjunto se achica en cada extracción. Esta diferencia decide la fórmula.","fbMal":" Sin reposición quedan 99. Esta diferencia decide la fórmula, y olvidarla es el <b>error 3 del bloque 9</b>."}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

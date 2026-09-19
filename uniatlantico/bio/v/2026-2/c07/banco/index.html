@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Banco de ejercicios · Capítulo 7</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--naranja)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c07/">Cap. 7</a><span>›</span><b>Banco</b></nav>
+<header class="cab">
+  <p class="tipo">⟳ Banco de ejercicios</p>
+  <h1>Contar éxitos y contar sucesos raros</h1>
+  <p class="bajada">Ejercicios distintos cada vez que entras</p>
+</header>
+
+<div class="caja" style="--acento:var(--naranja)">
+  <p style="margin:0"><b>Estos ejercicios se generan con números nuevos cada vez.</b> Si vuelves mañana, no serán los mismos. Resuélvelos en papel antes de abrir la respuesta: mirar la solución sin haberlo intentado no enseña nada.</p>
+</div>
+
+<div class="acciones">
+  <button class="bt" id="btNuevos" type="button">Generar otros</button>
+  <button class="bt sec" onclick="window.print()" type="button">Imprimir</button>
+</div>
+
+<div id="banco"></div>
+
+<div class="acciones">
+  <button class="bt" id="btNuevos2" type="button">Generar otros</button>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script src="../../../../../../uniatlantico/bio/assets/estad.js"></script>
+<script src="../../../../../../uniatlantico/bio/assets/banco.js"></script>
+<script>
+(function(){
+  var cap="c07";
+  function pintar(){ BIO.pintarBanco(cap,'banco',8); }
+  document.getElementById('btNuevos').addEventListener('click',function(){ pintar(); window.scrollTo({top:0,behavior:'smooth'}); });
+  document.getElementById('btNuevos2').addEventListener('click',function(){ pintar(); window.scrollTo({top:0,behavior:'smooth'}); });
+  pintar();
+})();
+</script>
+</body></html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 14</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c14/">Cap. 14</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Cuando no se puede suponer nada</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"mc","p":"Ordena de menor a mayor y asigna el puesto (1, 2, 3…) a cada uno: <b>7, 3, 9, 5</b>.","ops":["7→1, 3→2, 9→3, 5→4","9→1, 7→2, 5→3, 3→4","3→1, 5→2, 7→3, 9→4","3→3, 5→5, 7→7, 9→9"],"correcta":2,"fb":{"0":"Ese es el orden en que aparecen en la lista, no el puesto. Primero hay que ordenar.","1":"Ese es el orden de mayor a menor. En Kruskal-Wallis el puesto 1 es para el más chico.","2":"Exacto.","3":"El puesto no es el valor: es el lugar que ocupa en la lista ordenada."}},{"tipo":"num","p":"En una lista hay dos valores iguales que ocuparían los puestos <b>4 y 5</b>. ¿Qué puesto le pones a cada uno?","resp":4.5,"respTexto":"4,5","fbOk":"El promedio de los dos puestos: 4,5 a cada uno. Se llama empate, y es lo normal en datos de finca.","fbMal":" A cada uno se le da el promedio de los puestos que ocupan: (4 + 5)/2 = 4,5. Se llama empate."},{"tipo":"mc","p":"En un grupo, el valor más alto es <b>24</b>. Si lo cambio por <b>240</b>, ¿qué pasa con el promedio del grupo y con el puesto de ese valor en la lista ordenada?","ops":["Los dos cambian muchísimo.","El promedio cambia muchísimo; el puesto no cambia nada: sigue siendo el último.","Ninguno cambia.","El puesto cambia; el promedio no."],"correcta":1,"fb":{"0":"El puesto no puede cambiar: el 24 ya era el más alto, y el 240 también lo es.","1":"Exacto. Ahí está toda la idea del capítulo: con los puestos, un dato extremo deja de mandar.","2":"El promedio sí cambia: suma 216 gramos más al total.","3":"Al revés: el promedio se dispara y el puesto se queda igual."}},{"tipo":"num","p":"Cada prueba tiene <b>5 %</b> de dar un falso positivo. Si hago <b>tres</b> pruebas independientes, ¿cuál es la probabilidad de al menos un falso positivo? <small>(En porcentaje, sin decimales.)</small>","resp":14.26,"respTexto":"14 %","unidad":"%","tol":0.6,"fbOk":"1 − 0,95³ ≈ 0,14: casi el triple del 5 %. Por eso no se comparan tres grupos de a pares sin corregir.","fbMal":" «Al menos uno» = 1 − P(ninguno) = 1 − 0,95³ ≈ 14 %: casi el triple. Si respondiste 5, creíste que seguía igual; si respondiste 15, sumaste —se acerca, pero la cuenta va por el complemento. Comparar de a pares sin corregir es el <b>error 3 del bloque 9</b>."},{"tipo":"mc","p":"Del capítulo 11: ¿qué le pasa a la <b>potencia</b> de una prueba cuando la muestra es chica?","ops":["Sube.","No cambia: la potencia depende solo de α.","Baja: con muestra chica es difícil detectar una diferencia aunque exista.","Se vuelve 5 %."],"correcta":2,"fb":{"0":"Al revés: con menos datos es más difícil ver una diferencia real.","1":"La potencia depende de α, pero también del tamaño de la muestra y del tamaño del efecto.","2":"Exacto. Va a importar al final del capítulo: la no paramétrica cuesta potencia.","3":"El 5 % es α, la probabilidad de falso positivo. La potencia es otra cosa: la de detectar lo que sí existe."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

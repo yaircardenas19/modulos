@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 8</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c08/">Cap. 8</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>La curva normal</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"Un pez pesa <b>435 g</b>. El promedio es <b>400</b> y la desviación <b>35</b>. ¿A cuántas desviaciones del promedio está?","resp":1,"fbOk":"435 − 400 = 35, que es exactamente una desviación por encima.","fbMal":" 435 − 400 = 35, y 35 es una desviación. Está a 1 desviación por encima."},{"tipo":"num","p":"Otro pez pesa <b>330 g</b>. ¿A cuántas desviaciones del promedio está? <small>(Con signo: negativo si está por debajo.)</small>","resp":-2,"fbOk":"330 − 400 = −70, dos desviaciones <b>por debajo</b>. El signo dice de qué lado.","fbMal":" 330 − 400 = −70 = −2 × 35: dos desviaciones <b>por debajo</b>. Si escribiste 2 sin el signo, perdiste el lado: es el <b>error 4 del bloque 9</b>."},{"tipo":"num","p":"Si la curva es simétrica y el promedio es <b>400</b>, ¿qué porcentaje de los peces pesa más de 400 g?","resp":50,"unidad":"%","fbOk":"En una curva simétrica el promedio parte el área en dos mitades iguales.","fbMal":" 50 %: el promedio parte el área de una curva simétrica en dos mitades iguales."},{"tipo":"mc","p":"El área total bajo una curva de probabilidad, ¿cuánto vale?","ops":["Depende de la desviación.","Lo que valga el promedio.","No se puede saber: la curva no termina nunca.","1 (o 100 %): el pez tiene que pesar algo, y todos los casos posibles están debajo de la curva."],"correcta":3,"fb":{"0":"La desviación cambia la forma —más ancha o más angosta—, pero el área total siempre es la misma.","1":"El promedio dice dónde está el centro, no cuánto vale el área.","2":"La curva no toca el eje, pero el área total es finita: vale 1, porque ahí están todos los casos posibles.","3":"Exacto."}},{"tipo":"mc","p":"¿Cuál de estas variables <b>no</b> esperarías que tenga forma de campana?","ops":["El peso de los peces de un estanque.","El número de muertos por día, con promedio 3.","La temperatura del agua a las 6 a. m.","Ninguna: todas las variables de finca son acampanadas."],"correcta":1,"fb":{"0":"El peso de un lote parejo suele ser acampanado: la mayoría cerca del centro y pocos en las puntas.","1":"Exacto. Con promedio 3 no puede haber valores negativos y la cola se estira solo hacia la derecha: es asimétrica. Usar la normal ahí es el <b>error 1 del bloque 9</b>.","2":"La temperatura de madrugada varía poco alrededor de su centro, y suele ser acampanada.","3":"No todas: un conteo con promedio chico es asimétrico. Decidirlo es parte del capítulo."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

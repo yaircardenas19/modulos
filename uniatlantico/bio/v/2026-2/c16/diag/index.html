@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 16</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c16/">Cap. 16</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>La recta que mejor ajusta</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"En <b>y = 3 + 2x</b>, ¿cuánto vale y cuando <b>x = 5</b>?","resp":13,"fbOk":"3 + 2·5 = 13. Y el 2 es la pendiente: cuánto sube y por cada unidad que sube x.","fbMal":" 3 + 2·5 = 13. El 2 es la pendiente: cuánto sube y por cada unidad que sube x. Si te dio 25, sumaste antes de multiplicar."},{"tipo":"mc","p":"Por una nube de puntos se pueden trazar muchas rectas. Si «la mejor» fuera la que deja la menor distancia total a los puntos, ¿por qué <b>no</b> sirve sumar las distancias con su signo?","ops":["Porque la suma da un número muy grande.","Porque las distancias siempre son positivas.","Sí sirve: ese es el método de mínimos cuadrados.","Porque las de arriba y las de abajo se cancelan: una recta pésima podría dar suma cero."],"correcta":3,"fb":{"0":"Al contrario: puede dar cero aunque la recta sea mala, porque los signos se cancelan.","1":"Con su signo no: las de abajo son negativas. Justamente por eso se cancelan con las de arriba.","2":"Los mínimos cuadrados suman los <b>cuadrados</b> de las distancias, precisamente para que no se cancelen.","3":"Exacto. Es el mismo problema que llevó a elevar al cuadrado en la desviación estándar del capítulo 3."}},{"tipo":"num","p":"Una recta predice <b>62 kg</b> y en realidad se consumieron <b>66</b>. ¿Cuánto vale el residuo (real menos predicho)?","resp":4,"unidad":"kg","fbOk":"Residuo = 66 − 62 = 4 kg: la realidad estuvo 4 kg por encima de lo que dijo la recta.","fbMal":" Residuo = real − predicho = 66 − 62 = 4 kg. Si pusiste −4, restaste al revés."},{"tipo":"mc","p":"La recta ajustada a datos de temperatura entre <b>26 y 31 °C</b> da <b>−117 kg</b> cuando x = 0. ¿Qué significa eso?","ops":["Que el intercepto no tiene interpretación aquí: 0 °C queda lejísimos del rango medido. Es solo el ancla de la recta.","Que a 0 °C los peces consumirían −117 kg.","Que el modelo está mal hecho.","Que a bajas temperaturas los peces dejan de comer."],"correcta":0,"fb":{"0":"Exacto.","1":"Leído literal es absurdo: es el <b>error 1 del bloque 9</b>, interpretar el intercepto cuando x = 0 está fuera del rango.","2":"El modelo puede servir muy bien dentro del rango medido. Lo que no sirve es leerlo fuera de él.","3":"Puede que sea cierto, pero la recta no lo dice: fuera del rango no hay datos. Extrapolar es el <b>error 2 del bloque 9</b>."}},{"tipo":"mc","p":"Del capítulo 13: si divides una varianza entre otra y el resultado da <b>casi 1</b>, ¿qué concluyes? ¿Y si da <b>250</b>?","ops":["Casi 1: señal perfecta. 250: error de cálculo.","Casi 1: las varianzas son parecidas, no hay señal. 250: una es enormemente mayor que la otra, hay señal muy clara.","Casi 1 y 250 significan lo mismo.","Casi 1: las varianzas son muy distintas. 250: son parecidas."],"correcta":1,"fb":{"0":"Un cociente de 250 no es un error: es la señal de la regresión del capítulo, F = 246,8.","1":"Exacto. Es la lógica de la prueba F de la regresión: lo que la recta explica, dividido entre lo que queda sin explicar.","2":"Un cociente cercano a 1 dice que las varianzas son parecidas; uno de 250, que una es muchísimo mayor.","3":"Al revés: cerca de 1 las varianzas son parecidas."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

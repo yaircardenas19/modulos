@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 7</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c07/">Cap. 7</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Contar éxitos y contar sucesos raros</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"Si la probabilidad de que un alevín venga con malformación es <b>0,05</b>, ¿cuál es la probabilidad de que no la tenga?","resp":0.95,"respTexto":"0,95","fbOk":"Complemento: 1 − 0,05 = 0,95.","fbMal":" 1 − 0,05 = 0,95: complemento."},{"tipo":"num","p":"Dos alevinos independientes, cada uno sano con probabilidad <b>0,95</b>. ¿Cuál es la probabilidad de que <b>los dos</b> vengan sanos?","resp":0.9025,"respTexto":"0,9025","tol":0.003,"fbOk":"Independientes: se multiplican. 0,95 × 0,95 = 0,9025.","fbMal":" 0,95 × 0,95 = 0,9025. Dos cosas independientes que tienen que pasar a la vez se multiplican. Si te dio 1,9, sumaste."},{"tipo":"mc","p":"«Al menos uno con malformación» es lo contrario de… Completa: «al menos uno» = 1 − P(______).","ops":["uno con malformación","todos con malformación","ninguno con malformación","al menos uno sano"],"correcta":2,"fb":{"0":"«Exactamente uno» es solo una parte de «al menos uno». Lo contrario de «al menos uno» es «ninguno».","1":"«Todos con malformación» es un caso extremo, no lo contrario. Lo contrario de «al menos uno» es «ninguno».","2":"Exacto. Es el atajo del capítulo 4, y lo vas a usar en casi todos los ejercicios de este. Sumar término a término en vez de usarlo es el <b>error 5 del bloque 9</b>.","3":"«Al menos uno sano» y «al menos uno con malformación» pueden pasar a la vez, así que no son contrarios."}},{"tipo":"mc","p":"¿Cuál de estas dos situaciones tiene un <b>número fijo de intentos</b>? <br>(1) Revisar 20 alevinos y contar los malos. <br>(2) Contar cuántos peces amanecen muertos en un día.","ops":["La (1): se decidió revisar 20 y son 20.","La (2): el día tiene 24 horas fijas.","Las dos.","Ninguna."],"correcta":0,"fb":{"0":"Exacto. En la (2) nadie fijó cuántos intentos hay: solo se cuenta lo que ocurrió. Esa diferencia decide el modelo: binomial o Poisson.","1":"Las horas no son intentos: nadie puede decir cuántos «intentos de morirse» hubo. Confundir los dos modelos es el <b>error 2 del bloque 9</b>.","2":"En la (2) no hay intentos que contar: solo sucesos que ocurrieron.","3":"La (1) sí: son 20 alevinos, decididos de antemano."}},{"tipo":"mc","p":"El promedio de muertos diarios es <b>3</b>. ¿Puede haber un día con <b>0</b> muertos? ¿Y uno con <b>12</b>?","ops":["Ninguno de los dos: si el promedio es 3, los días rondan 3.","Con 0 sí, con 12 no: 12 es cuatro veces el promedio.","Con 12 sí, con 0 no: siempre se muere alguno.","Los dos pueden pasar: el conteo de un día concreto varía, y puede ser 0, 3, 7 o 12."],"correcta":3,"fb":{"0":"El promedio es a la larga; un día concreto varía. Leerlo como pronóstico es el <b>error 4 del bloque 9</b>.","1":"Raro no es imposible. Qué tan raro es un 12 es justamente lo que este capítulo permite calcular.","2":"Con promedio 3, un día sin muertos no solo es posible: pasa con alguna frecuencia.","3":"Exacto. Cuánta variación es normal es lo que este capítulo permite calcular."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

@@ -10,6 +10,10 @@
   --rojo:#A63A2A; --naranja:#B85B1E; --turquesa:#186F76;
   --ok:#2C6B51; --mal:#A63A2A;
 }
+/* El atributo hidden tiene que ganarle a cualquier display. Sin esto, la
+   barra de puntaje del diagnóstico (.marcador, display:flex) quedaba fija
+   abajo desde que se abría la página, vacía, antes de responder nada. */
+[hidden]{display:none !important}
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --papel:#12161D; --papel-2:#1A1F28; --papel-3:#232935;

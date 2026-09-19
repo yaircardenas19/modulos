@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 10</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c10/">Cap. 10</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>¿A cuántos peces hay que medirles?</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"mc","p":"El margen de error es <b>z·s/√n</b>. Si quiero que baje a la mitad, ¿qué le tengo que hacer a <b>√n</b>?","ops":["Reducirlo a la mitad.","Duplicarlo.","Cuadruplicarlo.","Sumarle 2."],"correcta":1,"fb":{"0":"Si √n baja, el margen sube: está dividiendo.","1":"Exacto. Como √n está dividiendo, duplicarlo parte el margen a la mitad.","2":"Eso es lo que le pasa a <b>n</b>, no a √n. Para la mitad de margen, √n se duplica.","3":"Sumar no sirve: el margen depende de un cociente, así que hay que multiplicar."}},{"tipo":"num","p":"Y entonces, ¿por cuánto hay que multiplicar <b>n</b>?","resp":4,"fbOk":"Si √n se duplica, n se multiplica por 4. Esa es la idea central del capítulo.","fbMal":" Por 4: si √n se duplica, n se multiplica por 2² = 4. Si respondiste 2, es el <b>error 3 del bloque 9</b>: creer que duplicar la muestra duplica la precisión."},{"tipo":"num","p":"Si el cálculo del tamaño de muestra da <b>n = 47,06</b>, ¿cuántos peces pesas?","resp":48,"unidad":"peces","fbOk":"Siempre hacia arriba: con 47, el margen quedaría un pelo más ancho del pedido.","fbMal":" 48. El tamaño de muestra siempre se redondea hacia arriba: con 47 el margen quedaría más ancho del pedido. Redondear hacia abajo es el <b>error 5 del bloque 9</b>."},{"tipo":"mc","p":"Dos estanques igual de grandes: uno muy parejo y otro muy disparejo. ¿En cuál hay que pesar más peces para tener la misma precisión?","ops":["En el parejo.","En los dos igual, porque son igual de grandes.","En el disparejo: más variabilidad exige más muestra para la misma precisión.","En ninguno: con 30 peces siempre alcanza."],"correcta":2,"fb":{"0":"Al revés: en el parejo, pocos peces ya dicen mucho.","1":"Es el <b>error 1 del bloque 9</b>: el tamaño del estanque no entra en la fórmula. Lo que entra es qué tan disparejo está.","2":"Exacto.","3":"El 30 es una regla para otra cosa (el teorema del límite central). Cuántos pesar depende de la variabilidad y del margen que se quiera."}},{"tipo":"mc","p":"Para calcular cuántos peces pesar hace falta saber <b>s</b>… pero s sale de pesar los peces. ¿Cómo se sale de ese círculo?","ops":["Suponiendo que s = 0.","Pesando todos los peces del estanque.","No se puede: hay que adivinar n.","Con un estimado previo: una biometría anterior, el ciclo pasado o una muestra piloto pequeña."],"correcta":3,"fb":{"0":"Con s = 0 la fórmula da n = 0: diría que no hace falta pesar ninguno.","1":"Eso ya no es muestrear, y en un estanque de miles de peces no es viable.","2":"No hace falta adivinar: hay de dónde sacar un estimado.","3":"Exacto. Es lo que se hace en la práctica, y está en el bloque 6."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 13</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c13/">Cap. 13</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Cuando lo que importa es la dispersión</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"mc","p":"Si la desviación estándar es <b>18 g</b>, ¿cuánto vale la varianza, y en qué unidades?","ops":["324 g","36 g","324 g²","4,24 g"],"correcta":2,"fb":{"0":"El número está bien, pero la unidad no: al elevar al cuadrado, los gramos también quedan al cuadrado.","1":"Eso es el doble de 18, no el cuadrado: 18² = 324.","2":"Exacto. Por eso se reporta la desviación y no la varianza: g² no significa nada en una finca.","3":"Eso es la raíz de 18. La varianza es el cuadrado de la desviación, no la raíz."}},{"tipo":"mc","p":"Dos estanques con desviaciones <b>18 g</b> y <b>42 g</b>. ¿Cuántas veces más disperso es el segundo, si comparas las desviaciones? ¿Y si comparas las varianzas?","ops":["2,33 veces en desviaciones y 2,33 en varianzas.","2,33 veces en desviaciones y 5,44 en varianzas.","5,44 veces en desviaciones y 2,33 en varianzas.","24 g más en desviaciones y 24 g² más en varianzas."],"correcta":1,"fb":{"0":"Las varianzas están al cuadrado: 1 764/324 = 5,44, no 2,33.","1":"Exacto: 42/18 = 2,33 y 1 764/324 = 5,44. Las varianzas exageran la diferencia porque están al cuadrado, y eso importa en la prueba.","2":"Al revés: 42/18 = 2,33 en desviaciones; en varianzas, 5,44.","3":"La pregunta es cuántas veces, no cuántos gramos más. Y la resta de varianzas no es 24: es 1 764 − 324 = 1 440 g²."}},{"tipo":"mc","p":"¿Puede una varianza ser negativa?","ops":["Sí, cuando los datos están por debajo del promedio.","Sí, cuando el promedio es negativo.","Solo si hay pocos datos.","No: es un promedio de cuadrados, y los cuadrados nunca son negativos."],"correcta":3,"fb":{"0":"Las desviaciones de los que están por debajo son negativas, pero al elevarlas al cuadrado quedan positivas.","1":"El signo del promedio no importa: la varianza promedia cuadrados, que nunca son negativos.","2":"El número de datos no cambia el signo: sigue siendo un promedio de cuadrados.","3":"Exacto. Si te da negativa, hay error de cálculo."}},{"tipo":"mc","p":"Dos estanques promedian <b>400 g</b> los dos. ¿Pueden valer plata distinta?","ops":["Sí: si uno está disparejo, buena parte de sus peces cae bajo el corte de precio.","No: con el mismo promedio valen lo mismo.","Sí, pero solo si tienen distinto número de peces.","Sí, pero solo si son de especies distintas."],"correcta":0,"fb":{"0":"Exacto. Es todo el capítulo 3, y la razón de ser de este.","1":"Mirar solo los promedios es el <b>error 1 del bloque 9</b>.","2":"Con el mismo número de peces también: lo que cambia el valor es cuántos caen bajo el corte, y eso depende de la dispersión.","3":"Con la misma especie también: basta con que uno venga disparejo."}},{"tipo":"mc","p":"Un cambio de alimento sube el promedio <b>20 g</b> pero también <b>duplica la desviación</b>. ¿Es una mejora?","ops":["Sí: el promedio subió.","Depende: sube el promedio, pero también la proporción de peces fuera de talla. Hay que calcular las dos cosas.","No: duplicar la desviación siempre es peor.","Da igual: una cosa compensa la otra."],"correcta":1,"fb":{"0":"Mirar solo el promedio es el <b>error 1 del bloque 9</b>: la dispersión también se paga.","1":"Exacto. Este capítulo da la herramienta para decidirlo con números.","2":"No es automático: si el promedio sube lo bastante, puede compensar. Hay que calcularlo.","3":"No se compensan por sí solas: hay que calcular cuántos peces quedan dentro y fuera de talla."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

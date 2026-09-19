@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 2</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c02/">Cap. 2</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>De la planilla a la tabla y al gráfico</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"De <b>60</b> peces, <b>39</b> pesan 400 g o más. ¿Qué porcentaje es?","resp":65,"respTexto":"65 %","unidad":"%","fbOk":"39/60 = 0,65 → 65 %.","fbMal":" 39 entre 60 da 0,65, que es el 65 %. Si pusiste 39, escribiste el conteo como si fuera el porcentaje: hay que dividir entre el total."},{"tipo":"mc","p":"En una tabla de frecuencias, la última casilla de la columna <b>frecuencia acumulada</b> siempre da lo mismo. ¿Qué valor?","ops":["1","El número de clases.","El total de datos (aquí, 60).","100"],"correcta":2,"fb":{"0":"Esa es la última casilla de la <b>relativa</b> acumulada. Confundirlas es el <b>error 2 del bloque 9</b>.","1":"Se acumulan peces, no clases. Dividir o acumular por el número de clases es el <b>error 3 del bloque 9</b>.","2":"Exacto. Y la relativa acumulada termina en 1, o 100 %.","3":"El 100 % es el final de la relativa acumulada escrita en porcentaje. La acumulada absoluta termina en el total de datos."}},{"tipo":"mc","p":"Si agrupo los pesos en clases <b>[350–400)</b> y <b>[400–450)</b>, ¿en cuál cae un pez de exactamente 400 g?","ops":["En [350–400), porque 400 es su límite.","En [400–450): el corchete incluye y el paréntesis excluye.","En las dos.","En ninguna: hay que hacer una clase aparte para el 400."],"correcta":1,"fb":{"0":"El paréntesis de la derecha excluye: [350–400) llega hasta justo antes de 400.","1":"Exacto. Y hay que decidirlo <b>antes</b> de contar: si no, un mismo dato podría contarse dos veces o ninguna.","2":"Entonces ese pez se contaría dos veces y la tabla sumaría más de 60.","3":"No hace falta: los corchetes ya deciden a qué clase va cada borde."}},{"tipo":"mc","p":"Un gráfico de torta reparte un 100 %. ¿Para cuál de estas variables sirve?","ops":["Para el peso de cada pez.","Para las dos.","Para ninguna: la torta nunca se debe usar.","Para la especie cultivada: tilapia, cachama, bocachico."],"correcta":3,"fb":{"0":"El peso es continuo: tendría 60 tajadas y no se vería nada. Es el <b>error 4 del bloque 9</b>.","1":"Para la especie sí; para el peso no, porque es continuo.","2":"Sí se usa: cuando se reparte un total entre pocas categorías.","3":"Exacto: es nominal, tiene pocas categorías y reparte un total."}},{"tipo":"mc","p":"Dos histogramas de los mismos datos: uno con <b>4 barras</b> y otro con <b>20</b>. Si en el estanque hubiera dos grupos de peces, ¿cuál lo mostraría?","ops":["El de 20 barras: con 4 se pierde el detalle y los dos grupos se funden en uno.","El de 4 barras, porque se ve más limpio.","Los dos muestran lo mismo: son los mismos datos.","Ninguno: los grupos solo se ven en una torta."],"correcta":0,"fb":{"0":"Exacto. Los dos son «correctos» en el sentido de que no mienten, pero cuentan cosas distintas. Es la trampa central del capítulo.","1":"Más limpio, pero esconde: con 4 barras los dos grupos quedan dentro de la misma barra.","2":"Mismos datos, distinta agrupación. La agrupación puede esconder o mostrar la forma.","3":"La torta es para repartir un total entre categorías, no para ver la forma de una variable continua."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

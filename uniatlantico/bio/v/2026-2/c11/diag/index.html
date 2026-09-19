@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 11</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c11/">Cap. 11</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Poner una afirmación a prueba</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"mc","p":"Si tomas dos grupos de peces alimentados <b>exactamente igual</b> y comparas sus promedios, ¿la diferencia va a dar cero?","ops":["Sí, si el alimento es el mismo.","Sí, si los grupos son grandes.","No: siempre habrá alguna diferencia por el azar del muestreo. Por eso la pregunta es si es más grande de lo que el azar produciría.","No, porque siempre hay un grupo mejor."],"correcta":2,"fb":{"0":"Aunque el alimento sea el mismo, cada grupo trae peces distintos: los promedios casi nunca coinciden.","1":"Con grupos grandes la diferencia se achica, pero no llega a cero.","2":"Exacto. Esa es la pregunta de todo el capítulo.","3":"La diferencia puede ser puro azar, sin que ningún grupo sea mejor."}},{"tipo":"mc","p":"Un juez dice <b>«no hay pruebas suficientes para condenar»</b>. ¿Eso significa que el acusado es inocente?","ops":["No: significa que no alcanzó la evidencia. Puede ser culpable y no haberse probado.","Sí: si no se probó, es inocente.","No: significa que es culpable.","Sí, pero solo si el juicio fue largo."],"correcta":0,"fb":{"0":"Exacto. Esta distinción es toda la lógica del capítulo: «no se rechaza» no es «se acepta».","1":"Es el <b>error 3 del bloque 9</b> llevado al juzgado: no rechazar no es demostrar.","2":"Tampoco: la frase no afirma nada sobre la culpa. Solo dice que la evidencia no alcanzó.","3":"La duración no cambia la lógica: falta de prueba no es prueba de inocencia."}},{"tipo":"mc","p":"Dos comparaciones muestran la <b>misma diferencia</b> entre alimentos: una con <b>100 000</b> peces medidos y otra con <b>30</b>. ¿En cuál confiarías más en que la diferencia es real?","ops":["En la de 30: con pocos peces se controla mejor.","En la de 100 000: más datos hacen que el azar explique menos.","En las dos igual, porque la diferencia es la misma.","En ninguna."],"correcta":1,"fb":{"0":"Con 30 peces, el azar puede producir esa diferencia sin mucho esfuerzo.","1":"Exacto.","2":"La misma diferencia pesa distinto según cuántos datos la respaldan.","3":"Con 100 000 peces el azar difícilmente produce una diferencia apreciable."}},{"tipo":"mc","p":"El alimento nuevo da <b>0,001 g/día menos</b>. Con 500 000 peces medidos, esa diferencia se detecta con total seguridad. ¿Vale la pena cambiar de alimento por eso?","ops":["Sí: la diferencia es significativa.","Sí: con 500 000 peces no hay duda.","No, porque 500 000 peces son demasiados para una prueba.","No: es una diferencia real pero irrelevante. Detectarla no la vuelve importante."],"correcta":3,"fb":{"0":"Es el <b>error 4 del bloque 9</b>, el más caro de todos: significativo no quiere decir importante.","1":"No hay duda de que la diferencia existe; la pregunta es si importa. Y 0,001 g/día no importa.","2":"El tamaño de la muestra no es el problema: es lo que permitió detectar una diferencia minúscula.","3":"Exacto. Antes de recomendar, se traduce la diferencia a plata."}},{"tipo":"mc","p":"Del capítulo 9: el intervalo del peso dio <b>(380,6 ; 402,2)</b> y el comprador exige 400 g. ¿Se puede afirmar que el estanque <b>no</b> llega a 400?","ops":["Sí: el promedio de la muestra, 391,4, está por debajo de 400.","No: el 400 está dentro del intervalo, así que no se puede descartar. Pero tampoco se puede afirmar que sí llega.","Sí: el intervalo empieza en 380,6.","No: el intervalo demuestra que sí llega a 400."],"correcta":1,"fb":{"0":"El promedio de la muestra no es el del estanque: el del estanque puede estar en cualquier punto del intervalo, incluido el 400.","1":"Exacto. Esa asimetría es lo que este capítulo formaliza.","2":"El intervalo también llega hasta 402,2: el 400 está adentro.","3":"Tampoco: que el 400 esté adentro no demuestra que se llega. Es el <b>error 3 del bloque 9</b>."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Banco de ejercicios · Capítulo 14</title>
+<meta name="description" content="Banco de ejercicios del capítulo 14: Cuando no se puede suponer nada">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--naranja)">
+
+<header class="cab">
+  <p class="tipo">⟳ Banco de ejercicios</p>
+  <h1>Capítulo 14</h1>
+  <p class="bajada">Cuando no se puede suponer nada</p>
+</header>
+<div class="cargando"><div class="p">
+  <div class="spin" aria-hidden="true"></div>
+  <p id="msg">Abriendo la versión de este semestre…</p>
+  <p id="err" hidden>No se pudo abrir automáticamente.
+    <a id="link" href="../../../../uniatlantico/bio/v/2026-2/c14/banco/">Entra por aquí</a>.</p>
+  <noscript><p><a href="../../../../uniatlantico/bio/v/2026-2/c14/banco/">Continuar</a></p></noscript>
+</div></div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>
+(function(){
+  var R="../../../../", D="uniatlantico/bio/v/", C="/c14/banco/";
+  function ir(v){ location.replace(R+D+v+C); }
+  fetch(R+'config/semestre.json',{cache:'no-store'})
+    .then(function(x){ return x.json(); })
+    .then(function(d){ ir(d.activo || "2026-2"); })
+    .catch(function(){
+      document.getElementById('msg').hidden=true;
+      document.getElementById('err').hidden=false;
+    });
+})();
+</script>
+</body></html>

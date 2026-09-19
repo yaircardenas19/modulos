@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 9</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c09/">Cap. 9</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>De la muestra al parámetro</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"mc","p":"¿Cuál es el parámetro y cuál el estadístico: el peso promedio de los <b>9 000</b> peces del estanque, o el de los <b>40</b> pesados?","ops":["Parámetro: el de los 40. Estadístico: el de los 9 000.","Parámetro: el de los 9 000 (μ, no se conoce). Estadístico: el de los 40 (x̄, sí se calcula).","Los dos son parámetros.","Los dos son estadísticos."],"correcta":1,"fb":{"0":"Al revés: el parámetro describe a toda la población y casi nunca se conoce; el estadístico sale de la muestra.","1":"Exacto.","2":"El de los 40 se calcula con la muestra: es un estadístico.","3":"El de los 9 000 describe a toda la población: es un parámetro, y no se conoce."}},{"tipo":"num","p":"¿Cuánto vale <b>√40</b>, aproximadamente? <small>(Con dos decimales.)</small>","resp":6.32,"respTexto":"6,32","tol":0.02,"fbOk":"√40 ≈ 6,32. Y √160 ≈ 12,65: cuadruplicar n solo duplica √n. Eso va a importar mucho.","fbMal":" √40 ≈ 6,32, porque 6,32 × 6,32 ≈ 40. Fíjate además en que √160 ≈ 12,65: cuadruplicar n solo duplica √n."},{"tipo":"mc","p":"Si a un número lo divides entre <b>√n</b> y n crece, ¿qué le pasa al resultado?","ops":["Se hace más grande.","Queda igual: la raíz compensa.","Se hace más chico: dividir entre algo cada vez mayor achica el resultado.","Depende del número."],"correcta":2,"fb":{"0":"Al revés: entre más grande el divisor, más chico el cociente.","1":"La raíz crece más despacio que n, pero crece: el cociente baja.","2":"Exacto. Por eso el error estándar σ/√n baja cuando la muestra crece.","3":"Para cualquier número positivo pasa lo mismo: al crecer el divisor, el cociente baja."}},{"tipo":"mc","p":"Tres muestras del mismo estanque dieron promedios de <b>391, 397 y 388 g</b>. ¿Alguien se equivocó?","ops":["Nadie: es variación de muestreo. Cada muestra trae peces distintos; es normal y es calculable.","Sí: si el estanque es el mismo, las tres tenían que dar igual.","Sí: el que sacó 397, porque se aleja de los otros.","No se puede saber sin pesar el estanque completo."],"correcta":0,"fb":{"0":"Exacto.","1":"Cada muestra trae peces distintos: sus promedios no tienen por qué coincidir.","2":"Una diferencia de 6 a 9 gramos entre muestras es lo esperable. Cuánta variación es normal es lo que calcula este capítulo.","3":"No hace falta: la variación entre muestras se puede calcular con la desviación y el tamaño de la muestra."}},{"tipo":"mc","p":"Los pesos de los peces van de <b>344 a 480 g</b>. Los promedios de muestras de 40 peces, ¿cuánto variarían?","ops":["Tanto como los pesos: de 344 a 480.","Más que los pesos.","Nada: todos los promedios darían igual.","Mucho menos: un promedio de 40 peces mezcla grandes con chicos, y eso lo estabiliza."],"correcta":3,"fb":{"0":"Es el <b>error 5 del bloque 9</b>: confundir el rango de los datos con lo que varía el promedio.","1":"Al promediar se compensan los grandes con los chicos: el promedio varía menos, no más.","2":"Varían, pero poco: cada muestra trae peces distintos.","3":"Exacto. Cuánto menos es lo que calcula este capítulo: σ/√n."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>

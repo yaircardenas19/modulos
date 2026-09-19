@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico rápido · Capítulo 6</title>
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../../../../assets/sitio.css">
+
+</head><body>
+<div class="env" style="--acento:var(--maiz)">
+<nav class="migas"><a href="../../../../../../">Inicio</a><span>›</span><a href="../../../../../../uniatlantico/">Universidad del Atlántico</a><span>›</span><a href="../../../../../../uniatlantico/bio/">Bioestadística</a><span>›</span><a href="../../../../../../uniatlantico/bio/c06/">Cap. 6</a><span>›</span><b>Diagnóstico</b></nav>
+<header class="cab">
+  <p class="tipo">✓ Diagnóstico rápido</p>
+  <h1>Cuando una cosa cambia la otra</h1>
+  <p class="bajada">Cinco preguntas · se corrigen solas · sin nota</p>
+</header>
+
+<div class="caja" style="--acento:var(--maiz)">
+  <p style="margin:0"><b>Esto no tiene nota.</b> Son las mismas cinco preguntas del <b>bloque 3</b> de tu libro. Respóndelas <b>antes</b> de la clase y sin calculadora. Lo que importa no es cuántas aciertes: es que llegues sabiendo cuáles fallaste, porque la clase empieza por ahí.</p>
+</div>
+
+<div id="quiz"></div>
+
+<div class="acciones">
+  <button class="bt" id="btRevisar" type="button">Revisar mis respuestas</button>
+  <button class="bt sec" id="btReiniciar" type="button">Empezar de nuevo</button>
+</div>
+
+<div class="marcador" id="marcador" hidden>
+  <span class="res" id="resultado"></span>
+  <a class="bt sec" href="../banco/" style="margin-left:auto">Practicar más</a>
+</div>
+<footer class="pie">
+  <span>Módulo de Bioestadística · José Jair Cárdenas Cardona</span>
+  <span class="sello">Semestre 2026-2</span>
+</footer>
+</div>
+<script>window.RC_DIAG={"items":[{"tipo":"num","p":"En una jaula hay <b>200</b> tilapias y <b>50</b> ya alcanzaron la talla comercial. Sacas una con la atarraya. ¿Cuál es la probabilidad de que esté en talla? <small>(Número entre 0 y 1.)</small>","resp":0.25,"respTexto":"0,25","fbOk":"50/200 = 1/4 = 0,25.","fbMal":" 50/200 = 0,25: los casos favorables sobre los posibles."},{"tipo":"num","p":"De <b>400</b> peces revisados: <b>120</b> vienen del estanque A y de ellos <b>78</b> tienen lesión en la aleta; de los <b>280</b> del estanque B, <b>42</b> tienen lesión. ¿Cuántos peces son del estanque A <b>y</b> tienen lesión?","resp":78,"unidad":"peces","fbOk":"Es el dato que ya está en el enunciado: no había que operar.","fbMal":" Son 78: el dato ya está en el enunciado. Si hiciste una cuenta, operaste de más. Leer primero <b>qué grupo se está mirando</b> es justamente lo que enseña este capítulo."},{"tipo":"mc","p":"¿Puede la probabilidad de que un pez tenga <b>las dos cosas</b> —bajo peso <b>y</b> lesión— ser mayor que la probabilidad de que tenga bajo peso?","ops":["Sí: dos condiciones juntas pesan más que una.","Sí, si la lesión es muy común.","Solo si las dos cosas son independientes.","No: todo pez que cumple las dos cosas cumple la primera. Un grupo que está dentro de otro nunca puede tener más individuos."],"correcta":3,"fb":{"0":"Es al revés, y es el <b>error 5 del bloque 9</b>: agregar un detalle hace el escenario más «creíble», pero nunca más probable.","1":"Por común que sea la lesión, los que tienen las dos cosas son una parte de los que tienen bajo peso.","2":"Ni siendo independientes: P(A y B) nunca pasa de P(A).","3":"Exacto."}},{"tipo":"num","p":"Si el <b>3 %</b> de los alevinos de un despacho viene infectado, ¿cuántos vienen infectados en un lote de <b>1 000</b>?","resp":30,"unidad":"alevinos","fbOk":"0,03 × 1 000 = 30. Esta forma de pensar —en casos, no en porcentajes— es la herramienta del capítulo.","fbMal":" 0,03 × 1 000 = 30 alevinos."},{"tipo":"mc","p":"¿Estas dos frases dicen lo mismo? <br>«El 90 % de los alevinos <b>infectados</b> da positivo en la prueba.» <br>«El 90 % de los alevinos <b>que dan positivo</b> está infectado.»","ops":["Sí: las dos hablan del 90 %.","No: la primera habla del grupo de los infectados; la segunda, del grupo de los que dieron positivo. Son grupos distintos, de tamaños distintos.","Sí, si la prueba es buena.","No, porque la segunda es imposible."],"correcta":1,"fb":{"0":"El número es el mismo, pero cada frase mira un grupo distinto. Confundirlas es el <b>error 1 del bloque 9</b>, el más caro de todo el curso.","1":"Exacto. Si te costó, estás en el lugar correcto: es el error más común del curso y el que más plata cuesta en una finca.","2":"Por buena que sea la prueba, las dos frases siguen mirando grupos distintos. La segunda depende además de cuántos infectados trae el lote.","3":"No es imposible: puede ser cierta o no, según cuántos infectados traiga el lote. Por eso no es lo mismo que la primera."}}]};</script>
+<script src="../../../../../../assets/diag.js"></script>
+</body></html>
